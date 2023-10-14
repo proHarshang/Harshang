@@ -4,83 +4,287 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-    <title>Modern Sound & Stage Lighting</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Font Awsome -->
-    <script
-      src="https://kit.fontawesome.com/d518d74698.js"
-      crossorigin="anonymous"
-    ></script>
+    <title>Harshang</title>
     <!-- bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <!-- Link Swiper's CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <!-- loco  -->
     <!-- <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> -->
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> -->
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body id="body" class="body">
-    <!-- preloader -->
     <div id="main">
-        <div class="container-fluid" id="preloader">
-            <div class="d-flex flex-column align-items-center">
-            <span>Harshang</span>
+
+      <div class="container-fluid" id="preloader">
+        <div class="d-flex flex-column align-items-center">
+          <span>Harshang</span>
+        </div>
+      </div>
+
+      <div id="heroSection">
+        <div id="heroOverlay"></div>
+        <div id="nameLayer">
+          <span class="name" id="name_up">Harshang</span>
+          <span class="name" id="name_down">Harshang</span>
+          <span
+            class="d-block d-sm-none position-relative text-center text-light pt-4"
+            style="bottom: -50px;">Full-Stack
+            developer</span>
+        </div>
+        <div id="hero_cursor">That's me</div>
+        <img src="images/harshang.png" alt="Harshang" id="harshang" />
+        <img src="images/arrow.png" id="arrow" class="d-md-none" />
+        <span class="profession d-none d-sm-block">Full-Stack developer</span>
+        <div id="heroSocialIcons" class="h-100 position-relative"
+          style="width: max-content;left: 100%;transform: translateX(-150%);background-color: black;">
+          <!-- <div
+            class="bg-light end-50 h-100 line position-absolute translate-middle-x"
+            style="width: 2px;z-index: -1;"></div> -->
+          <div id="socialString" class="h-100 line position-absolute"
+            style="z-index: -1; width: fit-content;">
+
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 20 0 Q 20 300 20 600" stroke="white" fill="transparent"></path>
+            </svg>
+
           </div>
+          <div
+            class="d-flex flex-column fs-4 gap-3 position-sticky px-2 py-3 rounded-3 top-50"
+            style="background-color: black;">
+            <a href="#" class="text-light"><i class="fa fa-linkedin"
+                aria-hidden="true"></i></a>
+            <a href="#" class="text-light"><i class="fa fa-github"
+                aria-hidden="true"></i></a>
+            <a href="#" class="text-light"><i class="fa fa-envelope-o"
+                aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="custom-shape-divider-bottom">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none">
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div id="skillSection">
+        <div id="skillSliderWrapper" class="pt-5">
+          <div id="skillSlider">
+            <img src="images/html.webp" alt="HTML" />
+            <img src="images/css.webp" alt="CSS" />
+            <img src="images/PHP.webp" alt="PHP" />
+            <img src="images/sass.webp" alt="sass" />
+            <img src="images/js.webp" alt="JavaScript" />
+            <img src="images/bts.webp" alt="bootstrap" />
+            <img src="images/sql.webp" alt="MySQL" />
+            <img src="images/figma.webp" alt="Figma" />
+            <img src="images/Laravel.webp" alt="Laravel" />
+          </div>
+          <div id="string2" style="padding-top: 25px;">
+            <svg width="100%" height="100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 0 50 Q 95 50 180 50" stroke="black"
+                fill="transparent" />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="skillMain d-flex flex-column flex-sm-row align-items-center">
+          <h1 class="text_verticle m-0 mx-sm-5 position-relative">Skills</h1>
+          <div id="skillBoard">
+            <div class="skill">
+              <span>HTML, CSS <img src="images/html.webp" alt="HTML"></span>
+              <div>#############<span>####</span></div>
+            </div>
+            <div class="skill">
+              <span>JavaScript <img src="images/js.webp" alt="JavaScript"></span>
+              <div>#############<span>####</span></div>
+            </div>
+            <div class="skill">
+              <span>PHP <img src="images/PHP.webp" alt="PHP"></span>
+              <div>#############<span>####</span></div>
+            </div>
+            <div class="skill">
+              <span>MySQL<img src="images/sql.webp" alt="MySQL"></span>
+              <div>#############<span>####</span></div>
+            </div>
+            <div class="skill">
+              <span>SCSS
+                <img src="images/sass.webp" alt="SCSS">
+              </span>
+              <div>#############<span>####</span></div>
+            </div>
+            <div class="skill">
+              <span>Laravel<img src="images/Laravel.webp" alt="Laravel"></span>
+              <div>#############<span>####</span></div>
+            </div>
+            <div class="skill">
+              <span>Figma<img src="images/figma.webp" alt="Figma"></span>
+              <div>#############<span>####</span></div>
+            </div>
+            <div class="skill">
+              <span>Creavity <img src="images/harshang.png" alt="Creavity"></span>
+              <div>###########################################################################################################################</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="projectSection" class="py-5">
+        <h1 class="text-center display-4 fw-bold">Projects</h1>
+        <div class="swiper" id="ProjectSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="images/project_images/denik.png" />
+              <div class="project-info">
+                <h5>Denik Electronics</h5>
+                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                  <div class="tag bg-dark">JavaScript</div>
+                  <div class="tag bg-dark">PHP</div>
+                  <div class="tag bg-dark">MySQL</div>
+                  <div class="tag bg-dark">Ajax</div>
+                  <div class="tag bg-dark">Figma</div>
+                </div>
+                <p>This is a business website for an automation company. Its
+                  admin panel has the facility to track the number of visitors
+                  and their time.</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/project_images/stocx.png" />
+              <div class="project-info">
+                <h5>Stock images</h5>
+                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                  <div class="tag bg-dark">JavaScript</div>
+                  <div class="tag bg-dark">Bootstrap</div>
+                  <div class="tag bg-dark">API</div>
+                  <div class="tag bg-dark">Figma</div>
+                </div>
+                <p>This is a search engine for free stock images developed using
+                  Unsplash's API. This site provides stock images and allows you
+                  to search for specific stock images. </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/project_images/gamester.png" />
+              <div class="project-info">
+                <h5>Gamesters</h5>
+                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                  <div class="tag bg-dark">JavaScript</div>
+                  <div class="tag bg-dark">PHP</div>
+                  <div class="tag bg-dark">Bootstrap</div>
+                  <div class="tag bg-dark">MySQL</div>
+                  <div class="tag bg-dark">Ajax</div>
+                </div>
+                <p>This is a Freefire Tournament website with an admin panel to
+                  control all tournaments. It has an integrated payment gateway.</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="d-flex justify-content-evenly" style="height: 56%;">
+                <img class="phone_img" src="images/project_images/swn-1.gif" />
+                <img class="phone_img" src="images/project_images/swn-2.webp" />
+              </div>
+              <div class="project-info">
+                <h5>Religious Program PWA</h5>
+                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                  <div class="tag bg-dark">JavaScript</div>
+                  <div class="tag bg-dark">SCSS</div>
+                  <div class="tag bg-dark">PHP</div>
+                  <div class="tag bg-dark">JQuery</div>
+                  <div class="tag bg-dark">Ajax</div>
+                  <div class="tag bg-dark">MySQL</div>
+                  <div class="tag bg-dark">Figma</div>
+                </div>
+                <p>A custom religion programme-handling web-app designed
+                  for the specific use of a client to handle programmes.</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="align-items-center d-flex gap-3 justify-content-evenly"
+                style="height: 51%;">
+                <img src="images/project_images/ModernMusic_d.png"
+                  style="height: 100%;" />
+                <img class="phone_img" style="height: 90%;"
+                  src="images/project_images/ModernMusic_m.gif" />
+              </div>
+              <div class="project-info">
+                <h5>ModernMusic & StageLighting</h5>
+                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                  <div class="tag bg-dark">JavaScript</div>
+                  <div class="tag bg-dark">PHP</div>
+                  <div class="tag bg-dark">SCSS</div>
+                  <div class="tag bg-dark">Bootstrap</div>
+                  <div class="tag bg-dark">JQuery</div>
+                  <div class="tag bg-dark">Ajax</div>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsa quasi</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/project_images/expansers.png" />
+              <div class="project-info">
+                <h5>Expansers Technology</h5>
+                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                  <div class="tag bg-dark">JavaScript</div>
+                  <div class="tag bg-dark">Php</div>
+                  <div class="tag bg-dark">JQuery</div>
+                  <div class="tag bg-dark">Ajax</div>
+                  <div class="tag bg-dark">Figma</div>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsa quasi</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- contact -->
+      <!-- footer -->
+
     </div>
 
+    <!--====== Javascript scripts =====-->
     <!-- jquery & ajax  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- gsap  -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
       integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+      referrerpolicy="no-referrer"></script>
     <!-- ScrollTrigger -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"
       integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+      referrerpolicy="no-referrer"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- Font Awsome -->
+    <script src="https://kit.fontawesome.com/d518d74698.js"
+      crossorigin="anonymous"></script>
     <!-- loco  -->
     <!-- <script
     src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script> -->
-    <!-- AOS  -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    <!-- jquery & ajax  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <!-- gsap  -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <!-- ScrollTrigger -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"
-      integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <!-- loco  -->
-    <!-- <script
-src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script> -->
     <script src="script.js"></script>
   </body>
 </html>

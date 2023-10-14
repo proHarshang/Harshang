@@ -1,17 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --green: #5ff46e;
-  --light-green: #d8ffdc;
-  --dark-green: #09cd1d;
-  --darkest-green: #002904;
+  --light: white;
+  --dark: black;
 }
 
 #body {
-  background-color: black;
+  background-color: var(--dark);
   overflow-x: hidden !important;
   width: 100vw;
   position: relative;
@@ -20,18 +19,32 @@
   width: 1rem;
   height: 0;
   max-width: 8px;
-  background-color: black;
+  background-color: var(--dark);
 }
 #body::-webkit-scrollbar-thumb {
-  border: 0.5px groove black;
+  border: 0.5px groove var(--dark);
   border-radius: 500px;
-  background-color: #ffad00;
+  background-color: #ffffff;
+}
+
+#main {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: a;
+  src: url("ethnocentric rg.otf");
+}
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 #preloader {
   display: flex;
   height: 100vh;
-  background: white;
+  background: var(--light);
   align-items: center;
   justify-content: center;
   z-index: 5000;
@@ -44,4 +57,205 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.text_verticle {
+  rotate: 180deg;
+  writing-mode: tb-rl;
+  cursor: context-menu;
+  font-size: 116px;
+}
+
+#heroSection {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+#heroSection #heroOverlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  background-color: #ffffff;
+}
+#heroSection #hero_cursor {
+  background-color: transparent;
+  color: white;
+  display: inline;
+  padding: 6px 19px;
+  position: absolute;
+  opacity: 0;
+  z-index: 6;
+  transition: opacity 1s;
+}
+#heroSection #nameLayer {
+  position: relative;
+  top: 10%;
+}
+#heroSection #nameLayer .name {
+  font-size: 11vmin;
+  position: absolute;
+  font-family: a, cursive;
+  width: 100vw;
+  text-align: center;
+  display: block;
+}
+#heroSection #nameLayer #name_up {
+  color: transparent;
+  -webkit-text-stroke: 0.35px #ffffff;
+  z-index: 3;
+}
+#heroSection #nameLayer #name_down {
+  color: white;
+  z-index: 1;
+}
+#heroSection #harshang {
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  height: 83vmin;
+  min-height: 360px;
+  cursor: url(images/ITSME.svg), auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#heroSection #arrow {
+  position: fixed;
+  bottom: 13%;
+  left: 7vmin;
+  height: 13vmin;
+}
+#heroSection .profession {
+  color: white;
+  top: 50%;
+  position: absolute;
+  margin-left: 10vw;
+}
+#heroSection .custom-shape-divider-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 11;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+#heroSection .custom-shape-divider-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 118px;
+  transform: rotateY(180deg);
+}
+#heroSection .custom-shape-divider-bottom .shape-fill {
+  fill: #ffffff;
+}
+
+#skillSection {
+  background: var(--light);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+#skillSection #skillSliderWrapper {
+  position: relative;
+  transform-origin: right;
+}
+#skillSection #skillSliderWrapper #skillSlider {
+  display: flex;
+  gap: 4.5vmin;
+  position: absolute;
+  z-index: -1;
+  height: 45px;
+  animation: slide 8s linear infinite;
+}
+#skillSection #skillBoard {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+#skillSection #skillBoard .skill {
+  display: flex;
+  gap: 20px;
+  cursor: context-menu;
+  position: relative;
+}
+#skillSection #skillBoard .skill > span {
+  font-weight: 500;
+}
+#skillSection #skillBoard .skill > div {
+  font-weight: bold;
+}
+#skillSection #skillBoard .skill > div > span {
+  opacity: 45%;
+}
+#skillSection #skillBoard .skill img {
+  position: absolute;
+  height: 2rem;
+  opacity: 0;
+  scale: 0;
+  left: 0;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#projectSection {
+  min-height: 100vh;
+  background: var(--dark);
+  color: var(--light);
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#projectSection #ProjectSwiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#projectSection #ProjectSwiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: 300px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  height: 320px;
+}
+#projectSection #ProjectSwiper .swiper-slide img {
+  display: block;
+  width: 100%;
+}
+#projectSection #ProjectSwiper .swiper-slide img.phone_img {
+  width: auto;
+}
+#projectSection #ProjectSwiper .swiper-slide .project-info {
+  padding: 25px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+#projectSection #ProjectSwiper .swiper-slide .project-info .tags .tag {
+  font-size: 12px;
+  padding: 2px 9px;
+  border-radius: 3px;
+}
+#projectSection #ProjectSwiper .swiper-slide .project-info p {
+  font-size: 0.9rem;
+  line-height: 1.35;
 }/*# sourceMappingURL=style.css.map */
