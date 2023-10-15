@@ -22,33 +22,34 @@ window.addEventListener("load", function () {
 // } catch (error) {
 // }
 
-function move_img_with(img, cont) {
+
+// move_name_with_cursor in hero section 
+function move_name_with_cursor(elem, container) {
   try {
-    cont.addEventListener("mousemove", function (dets) {
-      img.style.top = `calc(10% + ${dets.y * -0.02}px)`;
-      img.style.left = 1 - dets.x * 0.02 + "px";
+    container.addEventListener("mousemove", function (dets) {
+      elem.style.top = `calc(10% + ${dets.y * -0.02}px)`;
+      elem.style.left = 1 - dets.x * 0.02 + "px";
     });
   } catch (error) {
   }
 }
-
-function move_img_with1(img, cont) {
-  try {
-    cont.addEventListener("mousemove", function (dets) {
-      img.style.top = dets.y * 0.05 + "px";
-      img.style.left = dets.x * 0.05 + "px";
-    });
-  } catch (error) {
-  }
-}
-
 const nameLayer = document.getElementById("nameLayer");
-move_img_with(nameLayer, body);
+move_name_with_cursor(nameLayer, body);
+
+// move_elem_with_cursor function that is common for any element
+function move_elem_with_cursor(elem, container) {
+  try {
+    container.addEventListener("mousemove", function (dets) {
+      elem.style.top = dets.y * 0.05 + "px";
+      elem.style.left = dets.x * 0.05 + "px";
+    });
+  } catch (error) {
+  }
+}
 
 const text_verticle = document.getElementsByClassName("text_verticle")[0];
 const skillMain = document.getElementsByClassName("skillMain")[0];
-move_img_with1(text_verticle, skillMain);
-
+move_elem_with_cursor(text_verticle, skillMain);
 
 // skills string svg
 const string2 = document.getElementById("string2");
@@ -117,8 +118,6 @@ gsap.from("#skillSliderWrapper", {
 });
 
 gsap.to("#heroOverlay", {
-  // backgroundColor: "white",
-  // color: "black",
   opacity: 1,
   duration: 0.5,
   scrollTrigger: {
@@ -131,6 +130,30 @@ gsap.to("#heroOverlay", {
   },
 });
 
+// herosextion text Transform in Y axis autometically 
+try {
+  let profession_span = document.querySelectorAll(".profession span");
+  let s_index = 0;
+  setInterval(() => {
+    gsap.to(profession_span[s_index], {
+      y: "-=100%",
+      ease: Expo.easeInOut,
+      duration: 1,
+      onComplete: function () {
+        gsap.set(this._targets[0], { y: "100%" })
+      },
+    });
+
+    s_index === profession_span.length - 1 ? s_index = 0 : s_index++;
+
+    gsap.to(profession_span[s_index], {
+      y: "-=100%",
+      ease: Expo.easeInOut,
+      duration: 1,
+    });
+  }, 2000);
+} catch (error) {
+}
 
 // show image on hovering the skill name 
 try {
@@ -162,8 +185,8 @@ gsap.to("#skillSection", {
   scrollTrigger: {
     scroller: window,
     trigger: "#projectSection",
-    scrub: 2,
-    start: "top center",
+    scrub: 1,
+    start: "top center+=10%",
     end: "top top",
     // markers: true,
   }

@@ -43,9 +43,13 @@
         <div id="hero_cursor">That's me</div>
         <img src="images/harshang.png" alt="Harshang" id="harshang" />
         <img src="images/arrow.png" id="arrow" class="d-md-none" />
-        <span class="profession d-none d-sm-block">Full-Stack developer</span>
+        <span class="profession d-none d-sm-flex">
+          <span>Full-Stack Developer</span>
+          <span>Web Developer</span>
+          <span>Web Designer</span>
+        </span>
         <div id="heroSocialIcons" class="h-100 position-relative"
-          style="width: max-content;left: 100%;transform: translateX(-150%);background-color: black;">
+          style="width: max-content;left: 100%;transform: translateX(-150%);background-color: black; top:-10%">
           <!-- <div
             class="bg-light end-50 h-100 line position-absolute translate-middle-x"
             style="width: 2px;z-index: -1;"></div> -->
@@ -84,15 +88,18 @@
       <div id="skillSection">
         <div id="skillSliderWrapper" class="pt-5">
           <div id="skillSlider">
-            <img src="images/html.webp" alt="HTML" />
-            <img src="images/css.webp" alt="CSS" />
-            <img src="images/PHP.webp" alt="PHP" />
-            <img src="images/sass.webp" alt="sass" />
-            <img src="images/js.webp" alt="JavaScript" />
-            <img src="images/bts.webp" alt="bootstrap" />
-            <img src="images/sql.webp" alt="MySQL" />
-            <img src="images/figma.webp" alt="Figma" />
-            <img src="images/Laravel.webp" alt="Laravel" />
+            <!-- <span>Skills</span>
+            <span>Skills</span> -->
+            <div class="marquee-item"><img src="images/html.webp" alt="HTML" /></div>
+            <div class="marquee-item"><img src="images/css.webp" alt="CSS" /></div>
+            <div class="marquee-item"><img src="images/PHP.webp" alt="PHP" /></div>
+            <div class="marquee-item"><img src="images/sass.webp" alt="sass" /></div>
+            <div class="marquee-item"><img src="images/js.webp" alt="JavaScript" /></div>
+            <div class="marquee-item"><img src="images/bts.webp" alt="bootstrap" /></div>
+            <div class="marquee-item"><img src="images/sql.webp" alt="MySQL" /></div>
+            <div class="marquee-item"><img src="images/figma.webp" alt="Figma" /></div>
+            <div class="marquee-item"><img src="images/Laravel.webp"
+                alt="Laravel" /></div>
           </div>
           <div id="string2" style="padding-top: 25px;">
             <svg width="100%" height="100" xmlns="http://www.w3.org/2000/svg">
@@ -216,14 +223,14 @@
             <div class="swiper-slide">
               <div
                 class="align-items-center d-flex gap-3 justify-content-evenly"
-                style="height: 51%;">
+                style="height: 50%;">
                 <img src="images/project_images/ModernMusic_d.png"
                   style="height: 100%;" />
                 <img class="phone_img" style="height: 90%;"
                   src="images/project_images/ModernMusic_m.gif" />
               </div>
               <div class="project-info">
-                <h5>ModernMusic & StageLighting</h5>
+                <h5 class="text-nowrap">Modern Music & Stage Lighting</h5>
                 <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
                   <div class="tag bg-dark">JavaScript</div>
                   <div class="tag bg-dark">PHP</div>
@@ -232,8 +239,13 @@
                   <div class="tag bg-dark">JQuery</div>
                   <div class="tag bg-dark">Ajax</div>
                 </div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Ipsa quasi</p>
+                <p>A custom business website for a local business
+                  "<a href="#" target="_blank" rel="nofollow"
+                    class="text-decoration-underline text-light">Modern Music &
+                    Stage Lighting</a>"
+                  using
+                  minimalist animations in
+                  JS.</p>
               </div>
             </div>
             <div class="swiper-slide">
@@ -247,8 +259,12 @@
                   <div class="tag bg-dark">Ajax</div>
                   <div class="tag bg-dark">Figma</div>
                 </div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Ipsa quasi</p>
+                <p>A commercial website developed for the IT firm
+                  "<a href="https://expansers.com" target="_blank"
+                    rel="nofollow"
+                    class="text-decoration-underline text-light">Expansers
+                    Technology</a>",
+                  of which I was a co-founder.</p>
               </div>
             </div>
           </div>

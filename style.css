@@ -77,13 +77,14 @@ img {
   width: 100%;
   position: absolute;
   z-index: 10;
+  pointer-events: none;
   opacity: 0;
   background-color: #ffffff;
 }
 #heroSection #hero_cursor {
   background-color: transparent;
   color: white;
-  display: inline;
+  display: none;
   padding: 6px 19px;
   position: absolute;
   opacity: 0;
@@ -128,10 +129,23 @@ img {
   height: 13vmin;
 }
 #heroSection .profession {
+  overflow: hidden;
+  height: 25px;
   color: white;
   top: 50%;
-  position: absolute;
+  font-size: 17px;
+  position: relative;
   margin-left: 10vw;
+  flex-direction: column;
+}
+#heroSection .profession span {
+  position: absolute;
+  height: 25px;
+  transform: translateY(100%);
+}
+#heroSection .profession span:nth-of-type(1) {
+  top: 0%;
+  transform: translateY(0%);
 }
 #heroSection .custom-shape-divider-bottom {
   position: absolute;
@@ -164,14 +178,23 @@ img {
 #skillSection #skillSliderWrapper {
   position: relative;
   transform-origin: right;
+  width: 100vw;
 }
 #skillSection #skillSliderWrapper #skillSlider {
+  height: 45px;
   display: flex;
   gap: 4.5vmin;
   position: absolute;
   z-index: -1;
-  height: 45px;
   animation: slide 8s linear infinite;
+}
+#skillSection #skillSliderWrapper #skillSlider .marquee-item {
+  flex: 0 0 2vw;
+  margin: 0 1vw;
+}
+#skillSection #skillSliderWrapper #skillSlider .marquee-item img {
+  display: block;
+  width: 100%;
 }
 #skillSection #skillBoard {
   position: absolute;
@@ -208,7 +231,7 @@ img {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translatex(-144vw);
   }
 }
 
