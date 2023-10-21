@@ -47,10 +47,6 @@ function move_elem_with_cursor(elem, container) {
   }
 }
 
-const text_verticle = document.getElementsByClassName("text_verticle")[0];
-const skillMain = document.getElementsByClassName("skillMain")[0];
-move_elem_with_cursor(text_verticle, skillMain);
-
 // skills string svg
 const string2 = document.getElementById("string2");
 const string2_path = string2.querySelector("svg path");
@@ -160,14 +156,15 @@ try {
   const skills = document.querySelectorAll(".skill").forEach((e) => {
     let skills_img = e.querySelector("img");
     e.addEventListener("mousemove", function (dets) {
+      console.log(dets);
       gsap.to(skills_img, {
         duration: 0.5,
         scale: 1,
         opacity: 1,
         x: `${dets.offsetX}px`,
+        y: `${dets.offsetY}%`,
       });
     });
-
     e.addEventListener("mouseleave", function () {
       gsap.to(skills_img, {
         duration: 0.6,
