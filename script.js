@@ -151,6 +151,40 @@ try {
 } catch (error) {
 }
 
+// text sliding animation
+function HeadingAnim(frontText, backText) {
+  gsap.from(frontText, {
+    x: '600%',
+    duration: 2,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: backText,
+      start: "end 70%",
+      // markers: true,
+    }
+  });
+
+  gsap.from(backText, {
+    x: '500%',
+    duration: 1,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: backText,
+      start: "end 70%",
+      // markers: true,
+    }
+  });
+}
+let skill_frontText = document.querySelectorAll('#skillSlider h1')[0]
+let skill_backText = document.querySelectorAll('#skillSlider h1')[1];
+HeadingAnim(skill_frontText, skill_backText)
+
+let project_frontText = document.querySelectorAll('#projectHeadings h1')[0]
+let project_backText = document.querySelectorAll('#projectHeadings h1')[1];
+HeadingAnim(project_frontText, project_backText)
+
+
+
 // show image on hovering the skill name 
 try {
   const skills = document.querySelectorAll(".skill").forEach((e) => {
@@ -205,4 +239,20 @@ var swiper = new Swiper("#ProjectSwiper", {
   // pagination: {
   //   el: ".swiper-pagination",
   // },
+});
+
+
+gsap.to("#whiteBlob", {
+  rotate: '360deg',
+  scrollTrigger: {
+    scroller: window,
+    trigger: "#whiteBlob",
+    pin: true,
+    scrub: 1,
+    start: 'center center',
+    start: 'center center',
+    endScroller: window,
+    end: 'bottom+=50% top',
+    markers: true,
+  }
 });
