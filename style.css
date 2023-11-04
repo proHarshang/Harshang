@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -25,10 +26,6 @@
   border: 0.5px groove var(--dark);
   border-radius: 500px;
   background-color: #ffffff;
-}
-
-#main {
-  overflow-x: hidden;
 }
 
 @font-face {
@@ -59,6 +56,10 @@ img {
   background-clip: text;
 }
 
+.op_up {
+  opacity: 1;
+}
+
 .text_verticle {
   rotate: 180deg;
   writing-mode: tb-rl;
@@ -72,30 +73,28 @@ img {
   overflow: hidden;
   z-index: 1;
 }
-#heroSection #heroOverlay {
-  height: 100%;
-  width: 100%;
+#heroSection #heroCursor {
+  height: 200px;
+  width: 200px;
+  background: url("images/hero_blob.svg") no-repeat;
   position: absolute;
-  z-index: 10;
+  z-index: 7;
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: transform 0.7s;
   pointer-events: none;
-  opacity: 0;
-  background-color: #ffffff;
+  transform-origin: center;
 }
-#heroSection #hero_cursor {
-  background-color: transparent;
-  color: white;
-  display: none;
-  padding: 6px 19px;
-  position: absolute;
-  opacity: 0;
-  z-index: 6;
-  transition: opacity 1s;
+#heroSection #hero_page_primary {
+  background: transparent;
+  width: 100vw;
+  height: 100vh;
 }
-#heroSection #nameLayer {
+#heroSection #hero_page_primary #nameLayer {
   position: relative;
   top: 10%;
 }
-#heroSection #nameLayer .name {
+#heroSection #hero_page_primary #nameLayer .name {
   font-size: 11vmin;
   position: absolute;
   font-family: a, cursive;
@@ -103,18 +102,19 @@ img {
   text-align: center;
   display: block;
 }
-#heroSection #nameLayer #name_up {
+#heroSection #hero_page_primary #nameLayer #name_up {
   color: transparent;
   -webkit-text-stroke: 0.35px #ffffff;
   z-index: 3;
 }
-#heroSection #nameLayer #name_down {
+#heroSection #hero_page_primary #nameLayer #name_down {
   color: white;
   z-index: 1;
 }
-#heroSection #harshang {
-  position: absolute;
-  z-index: 2;
+#heroSection #hero_page_primary #harshang {
+  position: fixed;
+  z-index: 7;
+  mix-blend-mode: luminosity;
   bottom: 0;
   height: 83vmin;
   min-height: 360px;
@@ -122,30 +122,76 @@ img {
   left: 50%;
   transform: translateX(-50%);
 }
-#heroSection #arrow {
+#heroSection #hero_page_primary #arrow {
   position: fixed;
   bottom: 13%;
   left: 7vmin;
   height: 13vmin;
 }
-#heroSection .profession {
+#heroSection #hero_page_primary .profession {
   overflow: hidden;
   height: 25px;
   color: white;
   top: 50%;
   font-size: 17px;
-  position: relative;
+  position: absolute;
   margin-left: 10vw;
   flex-direction: column;
+  width: 100%;
 }
-#heroSection .profession span {
+#heroSection #hero_page_primary .profession span {
   position: absolute;
   height: 25px;
   transform: translateY(100%);
 }
-#heroSection .profession span:nth-of-type(1) {
+#heroSection #hero_page_primary .profession span:nth-of-type(1) {
   top: 0%;
   transform: translateY(0%);
+}
+#heroSection #hero_page_secondary {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 7;
+  top: 0;
+}
+#heroSection #hero_page_secondary p {
+  width: 90%;
+  max-width: 650px;
+  padding: 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: white;
+  font-weight: 100;
+  font-size: 23px;
+  word-spacing: 3px;
+}
+#heroSection #hero_page_secondary p span[data-img] {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#heroSection #hero_page_secondary p span[data-img] img {
+  position: absolute;
+  height: 3.5rem;
+  opacity: 0;
+  scale: 0;
+  filter: invert(1);
+  transition: transform 0.2s, scale 0.1s, opacity 0.1s;
+}
+#heroSection #hero_page_secondary p .friendly_font {
+  font-family: "Oooh Baby", cursive;
+}
+#heroSection #hero_page_secondary p .highlight {
+  color: #ffd912;
+  font-family: ui-monospace;
 }
 #heroSection .custom-shape-divider-bottom {
   position: absolute;
@@ -191,15 +237,12 @@ img {
 }
 #skillSection #skillSliderWrapper #skillSlider > h1 {
   position: absolute;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 45px;
 }
 #skillSection #skillSliderWrapper #skillSlider h1:nth-of-type(1) {
   -webkit-text-stroke: 1px #000000;
   color: transparent;
-}
-#skillSection #skillSliderWrapper #skillSlider h1:nth-of-type(2) {
-  transform: translate(-2%, -4%);
 }
 
 #skillMain {
@@ -253,16 +296,13 @@ img {
 }
 #projectSection #projectHeadings > h1 {
   position: absolute;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
   font-size: 45px;
 }
 #projectSection #projectHeadings h1:nth-of-type(1) {
   -webkit-text-stroke: 1px #ffffff;
   color: transparent;
-}
-#projectSection #projectHeadings h1:nth-of-type(2) {
-  transform: translate(-2%, -4%);
 }
 #projectSection #ProjectSwiper {
   width: 100%;
@@ -304,24 +344,25 @@ img {
 
 #contactSection {
   z-index: 2;
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px 0px;
   height: 100vh;
-  width: 100vh;
+  width: 100%;
+  max-width: 750px;
 }
 #contactSection #contact_box {
   width: 90%;
   padding: 80px 0px;
-  max-width: 700px;
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(40px) saturate(122%);
-  -webkit-backdrop-filter: blur(6px) saturate(122%);
+  -webkit-backdrop-filter: blur(40px) saturate(122%);
   background-color: rgba(6, 17, 38, 0.69);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -333,9 +374,33 @@ img {
   max-width: 480px;
   gap: 30px;
 }
-#contactSection #contact_box form button[type=button] {
+#contactSection #contact_box form button[type=submit] {
+  display: flex;
+  gap: 10px;
   width: -moz-max-content;
   width: max-content;
+  padding: 8px 35px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  overflow: hidden;
+  border-radius: 100px;
+  transition: box-shadow 0.3s;
+  align-items: center;
+  justify-content: space-around;
+}
+#contactSection #contact_box form button[type=submit]:hover {
+  box-shadow: 0px 0px 15px -5px white;
+}
+#contactSection #contact_box form button[type=submit]:hover img {
+  transform: rotate(360deg);
+}
+#contactSection #contact_box form button[type=submit]:active {
+  scale: 0.8;
+}
+#contactSection #contact_box form button[type=submit] img {
+  height: 1.3rem;
+  transition: transform 1s;
 }
 #contactSection #contact_box form .field {
   color: #ffffff;
@@ -344,6 +409,7 @@ img {
   -moz-column-gap: 20px;
        column-gap: 20px;
   flex-direction: row;
+  align-items: center;
 }
 #contactSection #contact_box form .field label {
   text-wrap: nowrap;
@@ -353,9 +419,10 @@ img {
 }
 #contactSection #contact_box form .field input,
 #contactSection #contact_box form .field textarea {
-  background: rgba(0, 0, 0, 0.1803921569);
+  background: rgba(0, 0, 0, 0.2784313725);
   border: 0;
-  border-bottom: 1px solid white;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2196078431);
   border-radius: 5px 5px 0px 0px;
   color: white;
   width: 100%;
@@ -363,7 +430,7 @@ img {
 }
 #contactSection #contact_box form .field input:focus,
 #contactSection #contact_box form .field textarea:focus {
-  background: rgba(0, 0, 0, 0.1803921569);
+  background: rgba(0, 0, 0, 0.2784313725);
   outline: 0;
   border: 0;
   color: white;
@@ -372,6 +439,53 @@ img {
 @media (max-width: 650px) {
   #contactSection #contact_box form .field .field {
     flex-direction: column;
+    align-items: start;
+  }
+}
+#contactSection #contact_box .shake {
+  animation: shake 0.5s ease-in-out;
+}
+#contactSection #contact_box .border_change {
+  animation: border_change 1s linear;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(5px);
+  }
+  40% {
+    transform: translateX(-5px);
+  }
+  60% {
+    transform: translateX(5px);
+  }
+  80% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes border_change {
+  0% {
+    border-bottom: 1px solid red;
+  }
+  20% {
+    border-bottom: 1px solid white;
+  }
+  40% {
+    border-bottom: 1px solid red;
+  }
+  60% {
+    border-bottom: 1px solid white;
+  }
+  80% {
+    border-bottom: 1px solid red;
+  }
+  100% {
+    border-bottom: 1px solid white;
   }
 }
 
@@ -381,10 +495,90 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: contain;
+  position: relative;
+  z-index: 3;
 }
 
 #whiteBlob {
   max-height: 290px;
   position: absolute;
   z-index: -1;
+}
+
+#footer {
+  background-color: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  -webkit-clip-path: circle(8%);
+          clip-path: circle(8%);
+}
+#footer #footer_content {
+  filter: blur(10px);
+  position: relative;
+  transition: filter 1s;
+}
+#footer #footer_content #footerCursor {
+  opacity: 0;
+  height: 200px;
+  width: 200px;
+  background: url("images/footer_blob.svg") no-repeat;
+  position: absolute;
+  mix-blend-mode: difference;
+  transition: transform 0.7s;
+  transform-origin: center;
+}
+#footer #footer_content #download_btn {
+  border: 2px solid black;
+  border-radius: 100px;
+  background-color: white;
+  padding: 8px 40px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  word-spacing: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transition: background-color 1s;
+}
+#footer #footer_content #download_btn:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
+#footer #footer_content #download_btn:active {
+  color: #ffffff;
+  background-color: #000000;
+  scale: 0.8;
+}
+#footer #footer_content #location_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, rgb(0, 0, 0) 20%, rgba(255, 255, 255, 0) 50%, rgb(0, 0, 0) 75%);
+  color: white;
+  font-size: 15px;
+  width: 100vw;
+  padding: 5px 3.5rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.scroll_extender {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+.scroll_extender > h2 {
+  font-size: 7rem;
+  text-align: center;
+  -webkit-text-stroke: 1.5px #575757;
+  color: black;
+  margin: 28px auto;
 }/*# sourceMappingURL=style.css.map */

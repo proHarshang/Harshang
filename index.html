@@ -23,16 +23,16 @@
   </head>
 
   <body id="body" class="body">
-    <div id="main">
 
-      <div class="container-fluid" id="preloader">
-        <div class="d-flex flex-column align-items-center">
-          <span>Harshang</span>
-        </div>
+    <div class="container-fluid" id="preloader">
+      <div class="d-flex flex-column align-items-center">
+        <span>Harshang</span>
       </div>
+    </div>
 
-      <div id="heroSection">
-        <div id="heroOverlay"></div>
+    <div id="heroSection">
+      <div id="heroCursor"></div>
+      <div id="hero_page_primary">
         <div id="nameLayer">
           <span class="name" id="name_up">Harshang</span>
           <span class="name" id="name_down">Harshang</span>
@@ -41,7 +41,6 @@
             style="bottom: -50px;">Full-Stack
             developer</span>
         </div>
-        <div id="hero_cursor">That's me</div>
         <img src="images/harshang.png" alt="Harshang" id="harshang" />
         <img src="images/arrow.png" id="arrow" class="d-md-none" />
         <span class="profession d-none d-sm-flex">
@@ -49,8 +48,8 @@
           <span>Web Developer</span>
           <span>Web Designer</span>
         </span>
-        <div id="heroSocialIcons" class="h-100 position-relative"
-          style="width: max-content;left: 100%;transform: translateX(-150%);background-color: black; top:-10%">
+        <div id="heroSocialIcons" class="h-100 position-absolute"
+          style="width: max-content;left: 100%;transform: translateX(-150%);background-color: black; top:-10%; z-index: 2;">
           <div id="socialString" class="h-100 line position-absolute"
             style="z-index: -1; width: fit-content;">
 
@@ -70,223 +69,253 @@
                 aria-hidden="true"></i></a>
           </div>
         </div>
-        <div class="custom-shape-divider-bottom">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none">
-            <path
-              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-              class="shape-fill"></path>
+      </div>
+      <div id="hero_page_secondary">
+        <p>I'm <span class="friendly_font" data-img>friendly<img
+              src="images/friendly.png" alt="friendly"></span> &
+          <span data-img>creative <img src="images/creative.png" alt="creative"></span><span
+            class="highlight"> full-stack
+            web-developer</span>. I have
+          an excellent
+          skill-set to built modern and responsive websites that <span
+            class="highlight">looks <span data-img>awesome<img
+                src="images/awesome.png" alt="awesome"></span></span>. enjoy
+          working on complex websites. I'm <span
+            class="highlight">interested
+            in <span data-img>work
+              opportunities<img src="images/work.png" alt="work"></span></span>
+          where
+          I can contribute and grow my
+          self.</p>
+      </div>
+
+      <div class="custom-shape-divider-bottom">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none">
+          <path
+            d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+            class="shape-fill"></path>
+        </svg>
+      </div>
+    </div>
+
+    <div id="skillSection">
+      <div id="skillSliderWrapper" class="pt-5">
+        <div id="skillSlider">
+          <h1 class="text-center">Skills</h1>
+          <h1 class="text-center">Skills</h1>
+        </div>
+        <div id="string2" style="padding-top: 25px;">
+          <svg width="100%" height="100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0 50 Q 95 50 180 50" stroke="black"
+              fill="transparent" />
           </svg>
         </div>
       </div>
-
-      <div id="skillSection">
-        <div id="skillSliderWrapper" class="pt-5">
-          <div id="skillSlider">
-            <h1 class="text-center">Skills</h1>
-            <h1 class="text-center">Skills</h1>
+      <div id="skillMain">
+        <div id="skillBoard">
+          <div class="d-flex">
+            <div class="skill">HTML <img src="images/html.webp" alt="HTML"></div>
+            <div class="skill">CSS <img src="images/css.webp" alt="CSS"></div>
           </div>
-          <div id="string2" style="padding-top: 25px;">
-            <svg width="100%" height="100" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 0 50 Q 95 50 180 50" stroke="black"
-                fill="transparent" />
-            </svg>
+          <div class="d-flex">
+            <div class="skill">JavaScript <img src="images/js.webp"
+                alt="JavaScript"></div>
+            <div class="skill">PHP <img src="images/PHP.webp" alt="PHP"></div>
+            <div class="skill">SCSS <img src="images/sass.webp" alt="SCSS"></div>
           </div>
-        </div>
-        <div id="skillMain">
-          <div id="skillBoard">
-            <div class="d-flex">
-              <div class="skill">HTML <img src="images/html.webp" alt="HTML"></div>
-              <div class="skill">CSS <img src="images/css.webp" alt="CSS"></div>
-            </div>
-            <div class="d-flex">
-              <div class="skill">JavaScript <img src="images/js.webp"
-                  alt="JavaScript"></div>
-              <div class="skill">PHP <img src="images/PHP.webp" alt="PHP"></div>
-              <div class="skill">SCSS <img src="images/sass.webp" alt="SCSS"></div>
-            </div>
-            <div class="d-flex">
-              <div class="skill">Laravel <img src="images/Laravel.webp"
-                  alt="Laravel"></div>
-              <div class="skill">Bootstrap <img src="images/bts.webp"
-                  alt="Bootstrap"></div>
-              <div class="skill">MySQL <img src="images/sql.webp" alt="MySQL"></div>
-            </div>
-            <div class="d-flex">
-              <div class="skill">GIT <img src="images/git.webp" alt="GIT"></div>
-              <div class="skill">Figma <img src="images/figma.webp" alt="Figma"></div>
-            </div>
+          <div class="d-flex">
+            <div class="skill">Laravel <img src="images/Laravel.webp"
+                alt="Laravel"></div>
+            <div class="skill">Bootstrap <img src="images/bts.webp"
+                alt="Bootstrap"></div>
+            <div class="skill">MySQL <img src="images/sql.webp" alt="MySQL"></div>
+          </div>
+          <div class="d-flex">
+            <div class="skill">GIT <img src="images/git.webp" alt="GIT"></div>
+            <div class="skill">Figma <img src="images/figma.webp" alt="Figma"></div>
           </div>
         </div>
       </div>
-
-      <div id="projectSection" class="py-5">
-        <div id="projectHeadings">
-          <h1>Projects</h1>
-          <h1>Projects</h1>
-        </div>
-        <div class="swiper" id="ProjectSwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="images/project_images/denik.png" />
-              <div class="project-info">
-                <h5>Denik Electronics</h5>
-                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
-                  <div class="tag bg-dark">JavaScript</div>
-                  <div class="tag bg-dark">PHP</div>
-                  <div class="tag bg-dark">MySQL</div>
-                  <div class="tag bg-dark">Ajax</div>
-                  <div class="tag bg-dark">Figma</div>
-                </div>
-                <p>This is a business website for an automation company. Its
-                  admin panel has the facility to track the number of visitors
-                  and their time.</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img src="images/project_images/stocx.png" />
-              <div class="project-info">
-                <h5>Stock images</h5>
-                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
-                  <div class="tag bg-dark">JavaScript</div>
-                  <div class="tag bg-dark">Bootstrap</div>
-                  <div class="tag bg-dark">API</div>
-                  <div class="tag bg-dark">Figma</div>
-                </div>
-                <p>This is a search engine for free stock images developed using
-                  Unsplash's API. This site provides stock images and allows you
-                  to search for specific stock images. </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img src="images/project_images/gamester.png" />
-              <div class="project-info">
-                <h5>Gamesters</h5>
-                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
-                  <div class="tag bg-dark">JavaScript</div>
-                  <div class="tag bg-dark">PHP</div>
-                  <div class="tag bg-dark">Bootstrap</div>
-                  <div class="tag bg-dark">MySQL</div>
-                  <div class="tag bg-dark">Ajax</div>
-                </div>
-                <p>This is a Freefire Tournament website with an admin panel to
-                  control all tournaments. It has an integrated payment gateway.</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="d-flex justify-content-evenly" style="height: 56%;">
-                <img class="phone_img" src="images/project_images/swn-1.gif" />
-                <img class="phone_img" src="images/project_images/swn-2.webp" />
-              </div>
-              <div class="project-info">
-                <h5>Religious Program PWA</h5>
-                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
-                  <div class="tag bg-dark">JavaScript</div>
-                  <div class="tag bg-dark">SCSS</div>
-                  <div class="tag bg-dark">PHP</div>
-                  <div class="tag bg-dark">JQuery</div>
-                  <div class="tag bg-dark">Ajax</div>
-                  <div class="tag bg-dark">MySQL</div>
-                  <div class="tag bg-dark">Figma</div>
-                </div>
-                <p>A custom religion programme-handling web-app designed
-                  for the specific use of a client to handle programmes.</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div
-                class="align-items-center d-flex gap-3 justify-content-evenly"
-                style="height: 50%;">
-                <img src="images/project_images/ModernMusic_d.png"
-                  style="height: 100%;" />
-                <img class="phone_img" style="height: 90%;"
-                  src="images/project_images/ModernMusic_m.gif" />
-              </div>
-              <div class="project-info">
-                <h5 class="text-nowrap">Modern Music & Stage Lighting</h5>
-                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
-                  <div class="tag bg-dark">JavaScript</div>
-                  <div class="tag bg-dark">PHP</div>
-                  <div class="tag bg-dark">SCSS</div>
-                  <div class="tag bg-dark">Bootstrap</div>
-                  <div class="tag bg-dark">JQuery</div>
-                  <div class="tag bg-dark">Ajax</div>
-                </div>
-                <p>A custom business website for a local business
-                  "<a href="#" target="_blank" rel="nofollow"
-                    class="text-decoration-underline text-light">Modern Music &
-                    Stage Lighting</a>"
-                  using
-                  minimalist animations in
-                  JS.</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img src="images/project_images/expansers.png" />
-              <div class="project-info">
-                <h5>Expansers Technology</h5>
-                <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
-                  <div class="tag bg-dark">JavaScript</div>
-                  <div class="tag bg-dark">Php</div>
-                  <div class="tag bg-dark">JQuery</div>
-                  <div class="tag bg-dark">Ajax</div>
-                  <div class="tag bg-dark">Figma</div>
-                </div>
-                <p>A commercial website developed for the IT firm
-                  "<a href="https://expansers.com" target="_blank"
-                    rel="nofollow"
-                    class="text-decoration-underline text-light">Expansers
-                    Technology</a>",
-                  of which I was a co-founder.</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-      <div id="forScroll_wrapper">
-        <svg id="whiteBlob" viewBox="0 0 1000 1000"
-          xmlns="http://www.w3.org/2000/svg"><defs><clippath
-              id="a"><path fill="currentColor"
-                d="M676 679q-176 179-424.5 0t0-423.5Q500 11 676 255.5t0 423.5Z" /></clippath></defs><g
-            clip-path="url(#a)"><path fill="#ffffff"
-              d="M676 679q-176 179-424.5 0t0-423.5Q500 11 676 255.5t0 423.5Z" /></g></svg>
-        <div id="contactSection">
-          <div id="contact_box">
-            <form action="#" id="contact_form">
-              <div class="field">
-                <label for="Name">Name</label>
-                <input type="text" name="name" id="input_name"
-                  autoComplete="off">
-              </div>
-              <div class="field">
-                <label for="Email">E-mail</label>
-                <input type="email" name="email" id="input_email"
-                  autoComplete="off">
-              </div>
-              <div class="field">
-                <label for="Subject">Subject</label>
-                <input type="subject" name="subject" id="input_subject"
-                  autoComplete="off">
-              </div>
-              <div class="field flex-column">
-                <label for="Message">Message</label>
-                <textarea name="subject" id="input_message" rows="5"
-                  autoComplete="off"></textarea>
-              </div>
-              <button type="button">Send</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="w-100" style="height: 100vh; color: gray;"></div>
-      <!-- footer -->
-
     </div>
+
+    <div id="projectSection" class="py-5">
+      <div id="projectHeadings">
+        <h1>Projects</h1>
+        <h1>Projects</h1>
+      </div>
+      <div class="swiper" id="ProjectSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/project_images/denik.png" />
+            <div class="project-info">
+              <h5>Denik Electronics</h5>
+              <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                <div class="tag bg-dark">JavaScript</div>
+                <div class="tag bg-dark">PHP</div>
+                <div class="tag bg-dark">MySQL</div>
+                <div class="tag bg-dark">Ajax</div>
+                <div class="tag bg-dark">Figma</div>
+              </div>
+              <p>This is a business website for an automation company. Its
+                admin panel has the facility to track the number of visitors
+                and their time.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/project_images/stocx.png" />
+            <div class="project-info">
+              <h5>Stock images</h5>
+              <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                <div class="tag bg-dark">JavaScript</div>
+                <div class="tag bg-dark">Bootstrap</div>
+                <div class="tag bg-dark">API</div>
+                <div class="tag bg-dark">Figma</div>
+              </div>
+              <p>This is a search engine for free stock images developed using
+                Unsplash's API. This site provides stock images and allows you
+                to search for specific stock images. </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/project_images/gamester.png" />
+            <div class="project-info">
+              <h5>Gamesters</h5>
+              <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                <div class="tag bg-dark">JavaScript</div>
+                <div class="tag bg-dark">PHP</div>
+                <div class="tag bg-dark">Bootstrap</div>
+                <div class="tag bg-dark">MySQL</div>
+                <div class="tag bg-dark">Ajax</div>
+              </div>
+              <p>This is a Freefire Tournament website with an admin panel to
+                control all tournaments. It has an integrated payment gateway.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="d-flex justify-content-evenly" style="height: 56%;">
+              <img class="phone_img" src="images/project_images/swn-1.gif" />
+              <img class="phone_img" src="images/project_images/swn-2.webp" />
+            </div>
+            <div class="project-info">
+              <h5>Religious Program PWA</h5>
+              <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                <div class="tag bg-dark">JavaScript</div>
+                <div class="tag bg-dark">SCSS</div>
+                <div class="tag bg-dark">PHP</div>
+                <div class="tag bg-dark">JQuery</div>
+                <div class="tag bg-dark">Ajax</div>
+                <div class="tag bg-dark">MySQL</div>
+                <div class="tag bg-dark">Figma</div>
+              </div>
+              <p>A custom religion programme-handling web-app designed
+                for the specific use of a client to handle programmes.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="align-items-center d-flex gap-3 justify-content-evenly"
+              style="height: 50%;">
+              <img src="images/project_images/ModernMusic_d.png"
+                style="height: 100%;" />
+              <img class="phone_img" style="height: 90%;"
+                src="images/project_images/ModernMusic_m.gif" />
+            </div>
+            <div class="project-info">
+              <h5 class="text-nowrap">Modern Music & Stage Lighting</h5>
+              <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                <div class="tag bg-dark">JavaScript</div>
+                <div class="tag bg-dark">PHP</div>
+                <div class="tag bg-dark">SCSS</div>
+                <div class="tag bg-dark">Bootstrap</div>
+                <div class="tag bg-dark">JQuery</div>
+                <div class="tag bg-dark">Ajax</div>
+              </div>
+              <p>A custom business website for a local business
+                "<a href="#" target="_blank" rel="nofollow"
+                  class="text-decoration-underline text-light">Modern Music &
+                  Stage Lighting</a>"
+                using
+                minimalist animations in
+                JS.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/project_images/expansers.png" />
+            <div class="project-info">
+              <h5>Expansers Technology</h5>
+              <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+                <div class="tag bg-dark">JavaScript</div>
+                <div class="tag bg-dark">Php</div>
+                <div class="tag bg-dark">JQuery</div>
+                <div class="tag bg-dark">Ajax</div>
+                <div class="tag bg-dark">Figma</div>
+              </div>
+              <p>A commercial website developed for the IT firm
+                "<a href="https://expansers.com" target="_blank"
+                  rel="nofollow"
+                  class="text-decoration-underline text-light">Expansers
+                  Technology</a>",
+                of which I was a co-founder.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <div id="forScroll_wrapper">
+      <div id="footer">
+        <div id="footer_content" class="w-100 h-100">
+          <div id="footerCursor"></div>
+          <button id="download_btn">Download CV</button>
+          <div id="location_bar">
+            <div>Thank You</div>
+            <div class="d-flex align-items-center gap-2"><img
+                src="images/location_pin.svg" alt="location"
+                style="filter: invert(1);"> Rajkot,
+              Gujarat, India</div>
+          </div>
+        </div>
+      </div>
+      <div id="contactSection">
+        <div id="contact_box">
+          <form action="#" id="contact_form">
+            <div class="field">
+              <label for="Name">Name</label>
+              <input type="text" title="Name" name="name" id="input_name"
+                autoComplete="off">
+            </div>
+            <div class="field">
+              <label for="Email">E-mail</label>
+              <input type="email" title="E-mail" name="email" id="input_email"
+                autoComplete="off">
+            </div>
+            <div class="field">
+              <label for="Subject">Subject</label>
+              <input type="subject" title="Subject" name="subject"
+                id="input_subject"
+                autoComplete="off">
+            </div>
+            <div class="field flex-column align-items-start">
+              <label for="Message">Message</label>
+              <textarea name="subject" title="Message" id="input_message"
+                rows="5"
+                autoComplete="off"></textarea>
+            </div>
+            <button type="submit"><img src="images/plane.svg" alt="send"> <span>Send</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll_extender">
+      <h2>Let's Discuss Work</h2>
+    </div>
+    <!-- footer -->
 
     <!--====== Javascript scripts =====-->
     <!-- jquery & ajax  -->

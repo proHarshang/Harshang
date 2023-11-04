@@ -7,21 +7,79 @@ window.addEventListener("load", function () {
   body.style.overflow = "auto";
 });
 
-// customCursor
-// const heroSection = document.querySelector("#harshang");
-// const customCursor = document.getElementById("hero_cursor");
-// try {
-//   heroSection.addEventListener("mousemove", (e) => {
-//     customCursor.style.opacity = "100%";
-//     customCursor.style.left = e.clientX + "px";
-//     customCursor.style.top = e.clientY + "px";
-//   });
-//   setInterval(() => {
-//     customCursor.style.opacity = "0%";
-//   }, 800);
-// } catch (error) {
-// }
+// customCursor for hero section
+const heroSection = document.querySelector("#heroSection");
+const hero_page_primary = heroSection.querySelector("#hero_page_primary");
+const heroCursor = document.getElementById("heroCursor");
+const harshang = document.getElementById("harshang");
+try {
+  hero_page_primary.addEventListener("mousemove", (e) => {
+    heroCursor.style.opacity = "100%";
+    heroCursor.style.translate = `calc(${e.clientX}px + -50%) calc(${e.clientY}px + -50%)`;
+  });
+  harshang.addEventListener("mouseover", () => {
+    heroCursor.style.transform = "scale(3)";
+  })
+  harshang.addEventListener("mouseout", () => {
+    heroCursor.style.transform = "scale(1)";
+  })
+  hero_page_primary.addEventListener("mouseout", () => {
+    heroCursor.style.opacity = "0%";
+  })
+} catch (error) {
+}
 
+// customCursor for hero section
+const download_btn = document.getElementById('download_btn')
+const footer = document.querySelector("#footer");
+const footerCursor = document.getElementById("footerCursor");
+try {
+  footer.addEventListener("mousemove", (e) => {
+    footerCursor.style.opacity = "100%";
+    footerCursor.style.translate = `calc(${e.clientX}px + -50%) calc(${e.clientY}px + -50%)`;
+  });
+  download_btn.addEventListener("mouseover", () => {
+    footerCursor.style.transform = "scale(0)";
+  })
+  download_btn.addEventListener("mouseout", () => {
+    footerCursor.style.transform = "scale(1)";
+  })
+  footer.addEventListener("mouseout", () => {
+    footerCursor.style.opacity = "0%";
+  })
+} catch (error) {
+}
+
+// reveal hero_page_secondary
+gsap.from('#hero_page_secondary', {
+  y: '100%',
+  scrollTrigger: {
+    scroller: window,
+    trigger: heroSection,
+    scrub: 1,
+    pin: true,
+    end: '60% top',
+    start: 'top top',
+    // markers: true,
+
+    // onEnter: () => {
+    // console.log('enter');
+    // heroSection.querySelector('#hero_page_primary').style.filter = 'blur(3px) brightness(0.5) opacity(0.5)';
+    // },
+    // onEnterBack: () => {
+    //   console.log('enter Back');
+    //   heroSection.querySelector('#hero_page_primary').style.filter = 'blur(3px) brightness(0.5) opacity(0.5)';
+    // },
+    // onLeave: () => {
+    // console.log('leave');
+    // heroSection.querySelector('#hero_page_primary').style.filter = 'blur(3px) brightness(0.5) opacity(0.5)';
+    // },
+    // onLeaveBack: () => {
+    // console.log('leave back');
+    // heroSection.querySelector('#hero_page_primary').style.filter = 'none';
+    // },
+  }
+});
 
 // move_name_with_cursor in hero section 
 function move_name_with_cursor(elem, container) {
@@ -40,12 +98,13 @@ move_name_with_cursor(nameLayer, body);
 function move_elem_with_cursor(elem, container) {
   try {
     container.addEventListener("mousemove", function (dets) {
-      elem.style.top = dets.y * 0.05 + "px";
-      elem.style.left = dets.x * 0.05 + "px";
+      elem.style.transform = `translate(${dets.offsetX * 0.2}px, ${dets.offsetY * 0.5}px)`;
     });
   } catch (error) {
   }
 }
+
+move_elem_with_cursor(download_btn, download_btn);
 
 // skills string svg
 const string2 = document.getElementById("string2");
@@ -102,6 +161,25 @@ try {
 } catch (error) {
 }
 
+// reducing opacity of herosection image on scroll 
+// gsap.to("#harshang", {
+//   opacity: 0,
+//   scrollTrigger: {
+//     scroller: window,
+//     trigger: "#harshang",
+//     // markers: true,
+//     start: "bottom top",
+//     end: "bottom top",
+//     onEnterBack: () => {
+//       gsap.to("#harshang", { duration: 0, opacity: 1 });
+//     },
+//     onLeave: () => {
+//       gsap.to("#harshang", { duration: 0, opacity: 0 });
+//     },
+//   },
+// });
+
+
 gsap.from("#skillSliderWrapper", {
   rotate: -50,
   scrollTrigger: {
@@ -110,19 +188,6 @@ gsap.from("#skillSliderWrapper", {
     scrub: 1,
     // markers: true,
     end: "top 30%",
-  },
-});
-
-gsap.to("#heroOverlay", {
-  opacity: 1,
-  duration: 0.5,
-  scrollTrigger: {
-    scroller: window,
-    trigger: "#heroOverlay",
-    scrub: 1,
-    // markers: true,
-    start: "center 30%",
-    end: "center+=30% top"
   },
 });
 
@@ -151,7 +216,7 @@ try {
 } catch (error) {
 }
 
-// text sliding animation
+// animation : text sliding animation
 function HeadingAnim(frontText, backText) {
   gsap.from(frontText, {
     x: '600%',
@@ -183,41 +248,61 @@ let project_frontText = document.querySelectorAll('#projectHeadings h1')[0]
 let project_backText = document.querySelectorAll('#projectHeadings h1')[1];
 HeadingAnim(project_frontText, project_backText)
 
+// animation : move herosection name up
+gsap.from("#name_up", {
+  y: '600%',
+  duration: 1.4,
+  ease: "power4.out",
+});
+gsap.from("#name_down", {
+  y: '500%',
+  duration: .8,
+  ease: "power4.out",
+})
 
-
-// show image on hovering the skill name 
-try {
-  const skills = document.querySelectorAll(".skill").forEach((e) => {
-    let skills_img = e.querySelector("img");
-    e.addEventListener("mousemove", function (dets) {
-      console.log(dets);
-      gsap.to(skills_img, {
-        duration: 0.5,
-        scale: 1,
-        opacity: 1,
-        x: `${dets.offsetX}px`,
-        y: `${dets.offsetY}%`,
-      });
-    });
-    e.addEventListener("mouseleave", function () {
-      gsap.to(skills_img, {
-        duration: 0.6,
-        opacity: 0,
-        scale: 0,
-      });
+// img_move_on_mouse  
+function img_move_on_mouse(elem, img) {
+  elem.addEventListener("mousemove", function (dets) {
+    gsap.to(img, {
+      duration: 0.5,
+      scale: 1,
+      opacity: 1,
+      x: `${dets.offsetX}px`,
+      y: `${dets.offsetY}%`,
     });
   });
+  elem.addEventListener("mouseleave", function () {
+    gsap.to(img, {
+      duration: 0.6,
+      opacity: 0,
+      scale: 0,
+    });
+  });
+}
+
+// show image on hovering the herosection paragraph using -> img_move_on_mouse()
+try {
+  heroSection.querySelectorAll("span[data-img]").forEach((e) => img_move_on_mouse(e, e.querySelector("img")));
 } catch (error) {
 }
 
+// show image on hovering the skill name using -> img_move_on_mouse()
+const skillSection = document.getElementById('skillSection');
+try {
+  document.querySelectorAll(".skill").forEach((e) => img_move_on_mouse(e, e.querySelector("img")));
+} catch (error) {
+}
+
+
+
 // round corners of skill section on scrolling 
-gsap.to("#skillSection", {
+gsap.to(skillSection, {
   borderRadius: '0% 0% 100% 100%',
   scrollTrigger: {
     scroller: window,
     trigger: "#projectSection",
     scrub: 1,
-    start: "top center+=10%",
+    start: "top center+=20%",
     end: "top top",
     // markers: true,
   }
@@ -242,17 +327,137 @@ var swiper = new Swiper("#ProjectSwiper", {
 });
 
 
-gsap.to("#whiteBlob", {
-  rotate: '360deg',
+// footer display gsap animations 
+const footer_content = footer.querySelector('#footer_content');
+
+gsap.to(footer, {
   scrollTrigger: {
     scroller: window,
-    trigger: "#whiteBlob",
+    trigger: footer,
     pin: true,
     scrub: 1,
     start: 'center center',
-    start: 'center center',
     endScroller: window,
     end: 'bottom+=50% top',
-    markers: true,
   }
 });
+
+gsap.to(footer, {
+  clipPath: 'circle(100%)',
+  delay: 2,
+  zIndex: 10,
+  scrollTrigger: {
+    scroller: window,
+    trigger: ".scroll_extender",
+    scrub: 3,
+    start: 'center center',
+    end: 'center center',
+    onEnter: () => {
+      footer_content.style.filter = 'blur(0px)';
+    },
+    onLeaveBack: () => {
+      footer_content.style.filter = 'blur(10px)';
+    },
+    // markers: true,
+  }
+});
+// document.getElementsByClassName('pin-spacer')[0].style.zIndex = '1!important'
+
+// form validation
+try {
+  const contact_form = document.getElementById('contact_form');
+  const contact_form_button = contact_form.querySelector('button');
+
+  const input_name = contact_form.querySelector('#input_name');
+  const input_email = contact_form.querySelector('#input_email');
+  const input_subject = contact_form.querySelector('#input_subject');
+  const input_message = contact_form.querySelector('#input_message');
+
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+  contact_form.addEventListener("submit", function (e) {
+    let valid = true;
+
+    if (input_name.value.trim() === '') {
+      valid = false;
+      input_name.classList.add('border_change');
+      setTimeout(() => {
+        input_email.classList.remove('border_change');
+      }, 1000);
+    } else {
+      input_email.classList.remove('border_change');
+    }
+
+    if (input_email.value.trim() === '') {
+      valid = false;
+      input_email.classList.add('border_change');
+      setTimeout(() => {
+        input_email.classList.remove('border_change');
+      }, 1000);
+      if (!emailRegex.test(input_email.value)) {
+        valid = false;
+        input_email.classList.add('border_change');
+        setTimeout(() => {
+          input_email.classList.remove('border_change');
+        }, 1000);
+      } else {
+        input_email.classList.remove('border_change');
+      }
+    } else {
+      input_email.classList.remove('border_change');
+    }
+
+    if (input_subject.value.trim() === '') {
+      valid = false;
+      input_subject.classList.add('border_change');
+      setTimeout(() => {
+        input_subject.classList.remove('border_change');
+      }, 1000);
+    } else {
+      input_subject.classList.remove('border_change');
+    }
+
+    if (input_message.value.trim() === '') {
+      valid = false;
+      input_message.classList.add('border_change');
+      setTimeout(() => {
+        input_message.classList.remove('border_change');
+      }, 1000);
+    } else {
+      input_message.classList.remove('border_change');
+    }
+
+    if (!valid) {
+      e.preventDefault();
+      contact_form.classList.add('shake')
+      setTimeout(() => {
+        contact_form.classList.remove('shake')
+      }, 1000);
+    } else {
+      contact_form_button.innerHTML = '<img src="images/plane.svg" alt="sending"> <span>Sending...</span>';
+      $.ajax({
+        url: "mail.php",
+        type: "post",
+        data: {
+          name: input_name.value,
+          subject: input_email.value,
+          email: input_subject.value,
+          msg: input_message.value,
+        },
+        success: function (data) {
+          console.log(data);
+          if (data != 1) {
+            contact_form_button.children[1].innerHTML = '<img src="images/plane.svg" alt="send"> <span>Send</span>';
+          } else {
+            contact_form_button.children[1].innerHTML = '<img src="images/plane.svg" alt="Done"> <span>Done</span>';
+            setTimeout(() => contact_form_button.innerHTML = '<img src="images/plane.svg" alt="send"> <span>Send</span>', 3500);
+          }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
+    }
+  });
+
+} catch (error) { }
