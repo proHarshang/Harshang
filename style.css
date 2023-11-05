@@ -34,8 +34,8 @@
 }
 img {
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 #preloader {
@@ -89,10 +89,21 @@ img {
   background: transparent;
   width: 100vw;
   height: 100vh;
+  will-change: auto;
 }
 #heroSection #hero_page_primary #nameLayer {
   position: relative;
   top: 10%;
+}
+#heroSection #hero_page_primary #nameLayer strong {
+  color: white;
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  transform: translateY(50%);
+  font-family: serif;
 }
 #heroSection #hero_page_primary #nameLayer .name {
   font-size: 11vmin;
@@ -105,7 +116,7 @@ img {
 #heroSection #hero_page_primary #nameLayer #name_up {
   color: transparent;
   -webkit-text-stroke: 0.35px #ffffff;
-  z-index: 3;
+  z-index: 8;
 }
 #heroSection #hero_page_primary #nameLayer #name_down {
   color: white;
@@ -120,7 +131,10 @@ img {
   min-height: 360px;
   cursor: url(images/ITSME.svg), auto;
   left: 50%;
-  transform: translateX(-50%);
+  translate: -50%;
+  transform-origin: center;
+  transition: transform 0.5s;
+  will-change: auto;
 }
 #heroSection #hero_page_primary #arrow {
   position: fixed;
@@ -148,15 +162,28 @@ img {
   top: 0%;
   transform: translateY(0%);
 }
+#heroSection #hero_page_primary #heroSocialIcons a img {
+  filter: invert(1);
+  height: 1.6rem;
+}
+#heroSection #hero_page_primary #heroSocialIcons a img:active {
+  scale: 0.8;
+}
 #heroSection #hero_page_secondary {
   position: absolute;
+  background: radial-gradient(transparent 0%, rgba(0, 0, 0, 0.9215686275) 50%);
+  -webkit-backdrop-filter: grayscale(1) blur(1px);
+  backdrop-filter: grayscale(1) blur(1px);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  z-index: 7;
+  opacity: 90%;
+  z-index: 9;
   top: 0;
+  pointer-events: none;
+  will-change: auto;
 }
 #heroSection #hero_page_secondary p {
   width: 90%;
@@ -164,9 +191,9 @@ img {
   padding: 50px;
   -webkit-user-select: none;
   -moz-user-select: none;
+  filter: drop-shadow(2px 4px 6px black);
   user-select: none;
   color: white;
-  font-weight: 100;
   font-size: 23px;
   word-spacing: 3px;
 }
@@ -188,10 +215,6 @@ img {
 }
 #heroSection #hero_page_secondary p .friendly_font {
   font-family: "Oooh Baby", cursive;
-}
-#heroSection #hero_page_secondary p .highlight {
-  color: #ffd912;
-  font-family: ui-monospace;
 }
 #heroSection .custom-shape-divider-bottom {
   position: absolute;
@@ -255,8 +278,8 @@ img {
   flex-direction: column;
   align-items: center;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 #skillMain #skillBoard .skill {
   border: 2px solid black;
@@ -315,8 +338,8 @@ img {
   position: relative;
   width: 300px;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   height: 320px;
 }
 #projectSection #ProjectSwiper .swiper-slide img {
@@ -374,7 +397,7 @@ img {
   max-width: 480px;
   gap: 30px;
 }
-#contactSection #contact_box form button[type=submit] {
+#contactSection #contact_box form button[type="submit"] {
   display: flex;
   gap: 10px;
   width: -moz-max-content;
@@ -389,16 +412,16 @@ img {
   align-items: center;
   justify-content: space-around;
 }
-#contactSection #contact_box form button[type=submit]:hover {
+#contactSection #contact_box form button[type="submit"]:hover {
   box-shadow: 0px 0px 15px -5px white;
 }
-#contactSection #contact_box form button[type=submit]:hover img {
+#contactSection #contact_box form button[type="submit"]:hover img {
   transform: rotate(360deg);
 }
-#contactSection #contact_box form button[type=submit]:active {
+#contactSection #contact_box form button[type="submit"]:active {
   scale: 0.8;
 }
-#contactSection #contact_box form button[type=submit] img {
+#contactSection #contact_box form button[type="submit"] img {
   height: 1.3rem;
   transition: transform 1s;
 }
@@ -407,7 +430,7 @@ img {
   display: flex;
   row-gap: 10px;
   -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   flex-direction: row;
   align-items: center;
 }
@@ -516,14 +539,24 @@ img {
   width: 100vw;
   height: 100vh;
   -webkit-clip-path: circle(8%);
-          clip-path: circle(8%);
+  clip-path: circle(8%);
 }
 #footer #footer_content {
   filter: blur(10px);
   position: relative;
   transition: filter 1s;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
-#footer #footer_content #footerCursor {
+#footer #footer_content .footer_overlayer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+}
+#footer #footer_content .footer_overlayer #footerCursor {
   opacity: 0;
   height: 200px;
   width: 200px;
@@ -541,10 +574,6 @@ img {
   font-weight: 500;
   letter-spacing: 0.4px;
   word-spacing: 1px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
   transition: background-color 1s;
 }
 #footer #footer_content #download_btn:hover {
@@ -560,13 +589,44 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(90deg, rgb(0, 0, 0) 20%, rgba(255, 255, 255, 0) 50%, rgb(0, 0, 0) 75%);
-  color: white;
+  /* background: linear-gradient(90deg, rgb(0, 0, 0) 20%, rgba(255, 255, 255, 0) 50%, rgb(0, 0, 0) 75%); */
+  /* color: white; */
   font-size: 15px;
   width: 100vw;
   padding: 5px 3.5rem;
   position: absolute;
   bottom: 0;
+  font-weight: 600;
+}
+#footer #footer_content #footerLinks {
+  width: 85%;
+  display: flex;
+  max-width: 700px;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#footer #footer_content #footerLinks a {
+  text-decoration: none;
+  color: black;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-wrap: nowrap;
+  padding: 8px 20px;
+  border-radius: 100px;
+  gap: 8px;
+  -webkit-backdrop-filter: contrast(0);
+  backdrop-filter: contrast(0);
+}
+#footer #footer_content #footerLinks a:hover {
+  background: rgba(128, 128, 128, 0.1490196078);
+}
+#footer #footer_content #footerLinks a:active {
+  scale: 0.8;
+}
+#footer #footer_content #footerLinks a img {
+  height: 1.3rem;
 }
 
 .scroll_extender {
@@ -581,4 +641,4 @@ img {
   -webkit-text-stroke: 1.5px #575757;
   color: black;
   margin: 28px auto;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

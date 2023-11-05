@@ -29,14 +29,16 @@ try {
 } catch (error) {
 }
 
-// customCursor for hero section
+// customCursor for footer section
 const download_btn = document.getElementById('download_btn')
 const footer = document.querySelector("#footer");
 const footerCursor = document.getElementById("footerCursor");
+const footerLinks = document.querySelectorAll("#footerLinks a");
 try {
   footer.addEventListener("mousemove", (e) => {
     footerCursor.style.opacity = "100%";
     footerCursor.style.translate = `calc(${e.clientX}px + -50%) calc(${e.clientY}px + -50%)`;
+
   });
   download_btn.addEventListener("mouseover", () => {
     footerCursor.style.transform = "scale(0)";
@@ -44,40 +46,50 @@ try {
   download_btn.addEventListener("mouseout", () => {
     footerCursor.style.transform = "scale(1)";
   })
-  footer.addEventListener("mouseout", () => {
-    footerCursor.style.opacity = "0%";
-  })
+  footerLinks.forEach(elem => {
+    elem.addEventListener("mouseover", () => {
+      footerCursor.style.transform = "scale(0)";
+    })
+    elem.addEventListener("mouseout", () => {
+      footerCursor.style.transform = "scale(1)";
+    })
+  });
 } catch (error) {
 }
 
 // reveal hero_page_secondary
-gsap.from('#hero_page_secondary', {
-  y: '100%',
+const hero_page_secondary = heroSection.querySelector('#hero_page_secondary');
+gsap.from(hero_page_secondary, {
+  opacity: 0,
   scrollTrigger: {
     scroller: window,
     trigger: heroSection,
-    scrub: 1,
     pin: true,
+    toggleActions: "play none none reverse",
     end: '60% top',
-    start: 'top top',
+    start: 'top+=0.1% top',
     // markers: true,
 
-    // onEnter: () => {
-    // console.log('enter');
-    // heroSection.querySelector('#hero_page_primary').style.filter = 'blur(3px) brightness(0.5) opacity(0.5)';
-    // },
+    onEnter: () => {
+      // console.log('enter');
+      harshang.style.transform = 'scale(0.9)';
+      hero_page_secondary.style.pointerEvents = 'auto'
+    },
     // onEnterBack: () => {
     //   console.log('enter Back');
-    //   heroSection.querySelector('#hero_page_primary').style.filter = 'blur(3px) brightness(0.5) opacity(0.5)';
+    //   hero_page_primary.style.transform = 'scale(0.9)';
+    //   hero_page_secondary.style.pointerEvents = 'auto'
     // },
     // onLeave: () => {
-    // console.log('leave');
-    // heroSection.querySelector('#hero_page_primary').style.filter = 'blur(3px) brightness(0.5) opacity(0.5)';
+    //   console.log('leave');
+    //   harshang.style.transform = 'scale(0.9)';
+    //   hero_page_secondary.style.pointerEvents = 'auto'
     // },
-    // onLeaveBack: () => {
-    // console.log('leave back');
-    // heroSection.querySelector('#hero_page_primary').style.filter = 'none';
-    // },
+    onLeaveBack: () => {
+      // console.log('leave back');
+      harshang.style.transform = 'scale(1)';
+      hero_page_secondary.style.pointerEvents = 'none'
+    },
   }
 });
 
@@ -85,7 +97,7 @@ gsap.from('#hero_page_secondary', {
 function move_name_with_cursor(elem, container) {
   try {
     container.addEventListener("mousemove", function (dets) {
-      elem.style.top = `calc(10% + ${dets.y * -0.02}px)`;
+      elem.style.top = `calc(8% + ${dets.y * -0.02}px)`;
       elem.style.left = 1 - dets.x * 0.02 + "px";
     });
   } catch (error) {
@@ -161,25 +173,6 @@ try {
 } catch (error) {
 }
 
-// reducing opacity of herosection image on scroll 
-// gsap.to("#harshang", {
-//   opacity: 0,
-//   scrollTrigger: {
-//     scroller: window,
-//     trigger: "#harshang",
-//     // markers: true,
-//     start: "bottom top",
-//     end: "bottom top",
-//     onEnterBack: () => {
-//       gsap.to("#harshang", { duration: 0, opacity: 1 });
-//     },
-//     onLeave: () => {
-//       gsap.to("#harshang", { duration: 0, opacity: 0 });
-//     },
-//   },
-// });
-
-
 gsap.from("#skillSliderWrapper", {
   rotate: -50,
   scrollTrigger: {
@@ -220,22 +213,24 @@ try {
 function HeadingAnim(frontText, backText) {
   gsap.from(frontText, {
     x: '600%',
-    duration: 2,
+    duration: 2.5,
     ease: "power4.out",
     scrollTrigger: {
       trigger: backText,
-      start: "end 70%",
+      start: "end 100%",
+      toggleActions: "play none none reset",
       // markers: true,
     }
   });
 
   gsap.from(backText, {
     x: '500%',
-    duration: 1,
+    duration: 1.5,
     ease: "power4.out",
     scrollTrigger: {
       trigger: backText,
-      start: "end 70%",
+      start: "end 100%",
+      toggleActions: "play none none reset",
       // markers: true,
     }
   });
@@ -372,11 +367,14 @@ try {
   const input_email = contact_form.querySelector('#input_email');
   const input_subject = contact_form.querySelector('#input_subject');
   const input_message = contact_form.querySelector('#input_message');
+  let sending;
 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
+
   contact_form.addEventListener("submit", function (e) {
     let valid = true;
+    sending = false;
 
     if (input_name.value.trim() === '') {
       valid = false;
@@ -427,37 +425,40 @@ try {
       input_message.classList.remove('border_change');
     }
 
-    if (!valid) {
-      e.preventDefault();
-      contact_form.classList.add('shake')
-      setTimeout(() => {
-        contact_form.classList.remove('shake')
-      }, 1000);
-    } else {
-      contact_form_button.innerHTML = '<img src="images/plane.svg" alt="sending"> <span>Sending...</span>';
-      $.ajax({
-        url: "mail.php",
-        type: "post",
-        data: {
-          name: input_name.value,
-          subject: input_email.value,
-          email: input_subject.value,
-          msg: input_message.value,
-        },
-        success: function (data) {
-          console.log(data);
-          if (data != 1) {
-            contact_form_button.children[1].innerHTML = '<img src="images/plane.svg" alt="send"> <span>Send</span>';
-          } else {
-            contact_form_button.children[1].innerHTML = '<img src="images/plane.svg" alt="Done"> <span>Done</span>';
-            setTimeout(() => contact_form_button.innerHTML = '<img src="images/plane.svg" alt="send"> <span>Send</span>', 3500);
-          }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
-        },
-      });
+    e.preventDefault();
+    if (sending === false) {
+      if (!valid) {
+        contact_form.classList.add('shake');
+        setTimeout(() => contact_form.classList.remove('shake'), 1000);
+      } else {
+        sending = true;
+        contact_form_button.innerHTML = '<img src="images/time.svg" alt="sending"> <span>Sending</span>';
+        $.ajax({
+          url: "mail.php",
+          type: "post",
+          data: {
+            name: input_name.value,
+            email: input_email.value,
+            subject: input_subject.value,
+            msg: input_message.value,
+          },
+          success: function (data) {
+            if (data != 1) {
+              contact_form_button.innerHTML = '<img src="images/plane.svg" alt="plane"> <span>Send</span>';
+            } else {
+              contact_form_button.innerHTML = '<img src="images/check.svg" alt="check"> <span>Done</span>';
+              setTimeout(() => contact_form_button.innerHTML = '<img src="images/plane.svg" alt="send"> <span>Send</span>', 3500);
+            }
+            sending = false;
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            // console.log(textStatus, errorThrown);
+            sending = false;
+          },
+        });
+      }
     }
+    sending = false;
   });
 
 } catch (error) { }

@@ -1,44 +1,45 @@
 <?php
 $response = 0;
+
 require 'phpmailer/vendor/autoload.php';
+require_once 'config.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-
 $name = $_POST['name'];
-$email = $_POST['email'];
 $subject = $_POST['subject'];
+$email = $_POST['email'];
 $msg = $_POST['msg'];
 
-$sender = $email;
-$receiver = "emperorharshang@gmail.com";
-$client = "emperorharshang@gmail.com";
+$sender = $receiverEmail;
+$password = $senderPassword;
+$receiver = $email;
+$client = $receiverEmail;
 
 $mail = new PHPMailer;
 $mail->isSMTP();
-$mail->isHTML();
 
 $mail->SMTPDebug = 0;
 $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->SMTPAuth = true;
+$mail->SMTPSecure = 'tls';
 
 $mail->Username = $sender;
-$mail->Password = 'fyjqxxcrnaujnpbp';
+$mail->Password = $password;
 
 $mail->setFrom($receiver, $name);
 
-$mail->addAddress($client, 'Modern Music');
+$mail->addAddress($client, 'Harshang Thakar');
 
 $mail->Subject = $subject;
-$mail->Body = 'Name : ' . $name . '<br>
-msg : ' . $msg;
+$mail->isHTML(true);
+$mail->Body = 'Name : ' . $name . '<br> Email : ' . $email . '<br> Message : ' . $msg;
 
 if (!$mail->send()) {
-    // echo 'Mailer Error: ' . $mail->ErrorInfo;
+    // error_log('Email sending error: ' . $mail->ErrorInfo);
     $response = 0;
 } else {
-    // echo 'The email message was sent. ' . $user_email;
     $response = 1;
 }
 echo $response;
