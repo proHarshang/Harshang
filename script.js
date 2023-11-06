@@ -433,7 +433,7 @@ try {
         sending = true;
         contact_form_button.innerHTML = '<img src="images/time.svg" alt="sending"> <span>Sending</span>';
         $.ajax({
-          url: "mail.php",
+          url: "mail.html",
           type: "post",
           data: {
             name: input_name.value,
