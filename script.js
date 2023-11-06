@@ -33,12 +33,10 @@ try {
 const download_btn = document.getElementById('download_btn')
 const footer = document.querySelector("#footer");
 const footerCursor = document.getElementById("footerCursor");
-const footerLinks = document.querySelectorAll("#footerLinks a");
 try {
   footer.addEventListener("mousemove", (e) => {
     footerCursor.style.opacity = "100%";
     footerCursor.style.translate = `calc(${e.clientX}px + -50%) calc(${e.clientY}px + -50%)`;
-
   });
   download_btn.addEventListener("mouseover", () => {
     footerCursor.style.transform = "scale(0)";
@@ -46,14 +44,9 @@ try {
   download_btn.addEventListener("mouseout", () => {
     footerCursor.style.transform = "scale(1)";
   })
-  footerLinks.forEach(elem => {
-    elem.addEventListener("mouseover", () => {
-      footerCursor.style.transform = "scale(0)";
-    })
-    elem.addEventListener("mouseout", () => {
-      footerCursor.style.transform = "scale(1)";
-    })
-  });
+  footer.addEventListener("mouseout", () => {
+    footerCursor.style.opacity = "0%";
+  })
 } catch (error) {
 }
 
@@ -112,10 +105,8 @@ function move_elem_with_cursor(elem, container) {
     container.addEventListener("mousemove", function (dets) {
       elem.style.transform = `translate(${dets.offsetX * 0.2}px, ${dets.offsetY * 0.5}px)`;
     });
-  } catch (error) {
-  }
+  } catch (error) { }
 }
-
 move_elem_with_cursor(download_btn, download_btn);
 
 // skills string svg
@@ -235,13 +226,19 @@ function HeadingAnim(frontText, backText) {
     }
   });
 }
-let skill_frontText = document.querySelectorAll('#skillSlider h1')[0]
+let skill_frontText = document.querySelectorAll('#skillSlider h1')[0];
 let skill_backText = document.querySelectorAll('#skillSlider h1')[1];
 HeadingAnim(skill_frontText, skill_backText)
 
-let project_frontText = document.querySelectorAll('#projectHeadings h1')[0]
+let project_frontText = document.querySelectorAll('#projectHeadings h1')[0];
 let project_backText = document.querySelectorAll('#projectHeadings h1')[1];
 HeadingAnim(project_frontText, project_backText)
+
+let contact_frontText = document.querySelectorAll('#contactHeading h1')[0];
+let contact_backText = document.querySelectorAll('#contactHeading h1')[1];
+HeadingAnim(contact_frontText, contact_backText)
+
+
 
 // animation : move herosection name up
 gsap.from("#name_up", {
@@ -362,6 +359,8 @@ gsap.to(footer, {
 try {
   const contact_form = document.getElementById('contact_form');
   const contact_form_button = contact_form.querySelector('button');
+  const contactAlert = document.getElementById('contactAlert');
+  $(contactAlert).hide();
 
   const input_name = contact_form.querySelector('#input_name');
   const input_email = contact_form.querySelector('#input_email');
@@ -454,6 +453,9 @@ try {
           error: function (jqXHR, textStatus, errorThrown) {
             // console.log(textStatus, errorThrown);
             sending = false;
+            $(contactAlert).fadeIn();
+            contact_form_button.innerHTML = '<img src="images/plane.svg" alt="plane"> <span>Send</span>';
+            setTimeout(() => $(contactAlert).fadeOut(), 2500);
           },
         });
       }
