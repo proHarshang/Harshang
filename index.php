@@ -25,9 +25,11 @@ if (preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
   <meta property="og:url" content="https://portfolio--thakarharshang.repl.co/">
   <meta property="og:description" content="I'm a full-stack web developer, skilled in the development of modern, responsive, and complex websites.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://portfolio--thakarharshang.repl.co/images/harshang.webp">
-  <meta property="og:image:secure_url" content="https://portfolio--thakarharshang.repl.co/images/harshang.webp" />
+  <meta property="og:image" content="https://portfolio--thakarharshang.repl.co/images/og_img.webp">
+  <meta property="og:image:secure_url" content="https://portfolio--thakarharshang.repl.co/images/og_img.webp" />
   <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
   <title>Harshang Thakar | Full-stack web developer</title>
   <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
