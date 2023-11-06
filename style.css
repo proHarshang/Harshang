@@ -41,21 +41,29 @@ img {
 #preloader {
   display: flex;
   height: 100vh;
-  background: var(--light);
+  background: white;
   align-items: center;
   justify-content: center;
-  z-index: 5000;
+  z-index: 500000;
+  font-family: a;
   position: fixed;
   overflow-y: hidden;
 }
-#preloader span {
-  font-size: 5rem;
-  background: linear-gradient(89.99deg, #243afa -2.26%, #ff4308 102.14%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+#preloader .tracking-in-expand {
+  animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite alternate both;
 }
-
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .op_up {
   opacity: 1;
 }
@@ -132,7 +140,7 @@ img {
   cursor: url(images/ITSME.svg), auto;
   left: 50%;
   translate: -50%;
-  transform-origin: center;
+  transform-origin: bottom;
   transition: transform 0.5s;
   will-change: auto;
 }
@@ -161,6 +169,24 @@ img {
 #heroSection #hero_page_primary .profession span:nth-of-type(1) {
   top: 0%;
   transform: translateY(0%);
+}
+#heroSection #hero_page_primary #heroSocialIcons {
+  position: absolute;
+  height: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  left: 100%;
+  transform: translateX(-150%);
+  background-color: black;
+  top: 0%;
+  z-index: 2;
+}
+#heroSection #hero_page_primary #heroSocialIcons .line {
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 #heroSection #hero_page_primary #heroSocialIcons a img {
   filter: invert(1);
@@ -218,6 +244,7 @@ img {
 }
 #heroSection .custom-shape-divider-bottom {
   position: absolute;
+  display: none;
   bottom: 0;
   left: 0;
   width: 100%;

@@ -1,0 +1,321 @@
+<?php
+$useragent = $_SERVER['HTTP_USER_AGENT'];
+
+if (preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i', $useragent) || preg_match('/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i', substr($useragent, 0, 4))) {
+  die('<h1>Not developed for mobiles devices yet !!</h1>');
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <meta name="description" content="I'm a full-stack web developer, skilled in the development of modern, responsive, and complex websites.">
+  <meta name="language" content="english">
+  <meta name="author" content="Harshang Thakar" />
+  <meta name="designer" content="Harshang Thakar">
+  <meta name="rating" content="general">
+  <meta name="contact" content="harshang.developer@gmail.com">
+  <meta name="title" content="Harshang Thakar">
+  <meta property="og:title" content="Harshang Thakar | Full-stack web developer">
+  <meta property="og:site_name" content="Harshang Thakar">
+  <meta property="og:url" content="https://portfolio--thakarharshang.repl.co/">
+  <meta property="og:description" content="I'm a full-stack web developer, skilled in the development of modern, responsive, and complex websites.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://portfolio--thakarharshang.repl.co/images/harshang.webp">
+  <meta property="og:image:secure_url" content="https://portfolio--thakarharshang.repl.co/images/harshang.webp" />
+  <meta property="og:image:type" content="image/webp">
+  <title>Harshang Thakar | Full-stack web developer</title>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body id="body">
+
+  <div class="container-fluid" id="preloader">
+    <span class="display-1 tracking-in-expand">Harshang</span>
+  </div>
+
+  <div id="heroSection">
+    <div id="heroCursor"></div>
+    <div id="hero_page_primary">
+      <div id="nameLayer">
+        <strong>I am</strong>
+        <span class="name" id="name_up">Harshang</span>
+        <span class="name" id="name_down">Harshang</span>
+        <span class="d-block d-sm-none position-relative text-center text-light pt-4" style="bottom: -50px;">Full-Stack
+          developer</span>
+      </div>
+      <img src="images/harshang.webp" alt="Harshang Thakar" id="harshang" />
+      <img src="images/arrow.png" id="arrow" class="d-md-none" />
+      <span class="profession d-none d-sm-flex">
+        <span>Full-Stack Developer</span>
+        <span>Web Developer</span>
+        <span>Web Designer</span>
+      </span>
+      <div id="heroSocialIcons">
+        <div id="socialString" class="line">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 20 0 Q 20 300 20 1000" stroke="white" fill="transparent"></path>
+          </svg>
+        </div>
+        <div class="d-flex align-items-center flex-column fs-4 gap-3 position-sticky px-2 py-3 rounded-3 top-50" style="background-color: black;">
+          <a href="https://linkedin.com/in/harshang-thakar" class="text-light"><img src="images/linkedin.svg" alt="Linkedin | Harshang Thakar"></a>
+          <a href="https://github.com/proHarshang" class="text-light"><img src="images/github.svg" alt="Github | Harshang Thakar"></a>
+          <a href="mailto:harshang.developer@gmail.com" class="text-light"><img src="images/email.svg" alt="Email | Harshang Thakar"></a>
+        </div>
+      </div>
+    </div>
+    <div id="hero_page_secondary">
+      <p>I'm <span class="friendly_font" data-img>friendly<img src="images/friendly.png" alt="friendly"></span> &
+        <span data-img>creative <img src="images/creative.png" alt="creative"></span><span class="highlight"> full-stack
+          web-developer</span>. I have
+        an excellent
+        skill-set to built modern and responsive websites that <span class="highlight">looks <span data-img>awesome<img src="images/awesome.png" alt="awesome"></span></span>. enjoy
+        working on complex websites. I'm <span class="highlight">interested
+          in <span data-img>work
+            opportunities<img src="images/work.png" alt="work"></span></span>
+        where
+        I can contribute and grow my
+        self.
+      </p>
+    </div>
+
+    <div class="custom-shape-divider-bottom">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </div>
+
+  <div id="skillSection">
+    <div id="skillSliderWrapper" class="pt-5">
+      <div id="skillSlider">
+        <h1 class="text-center">Skills</h1>
+        <h1 class="text-center">Skills</h1>
+      </div>
+      <div id="string2" style="padding-top: 25px;">
+        <svg width="100%" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 0 50 Q 95 50 180 50" stroke="black" fill="transparent" />
+        </svg>
+      </div>
+    </div>
+    <div id="skillMain">
+      <div id="skillBoard">
+        <div class="d-flex">
+          <div class="skill">HTML <img src="images/html.webp" alt="HTML"></div>
+          <div class="skill">CSS <img src="images/css.webp" alt="CSS"></div>
+        </div>
+        <div class="d-flex">
+          <div class="skill">JavaScript <img src="images/js.webp" alt="JavaScript"></div>
+          <div class="skill">Bootstrap <img src="images/bts.webp" alt="Bootstrap"></div>
+          <div class="skill">SCSS <img src="images/sass.webp" alt="SCSS"></div>
+        </div>
+        <div class="d-flex">
+          <!-- <div class="skill">Laravel <img src="images/Laravel.webp"
+                  alt="Laravel"></div> -->
+          <div class="skill">PHP <img src="images/PHP.webp" alt="PHP"></div>
+          <div class="skill">MySQL <img src="images/sql.webp" alt="MySQL"></div>
+          <div class="skill">GIT <img src="images/git.webp" alt="GIT"></div>
+        </div>
+        <div class="d-flex">
+          <div class="skill">Figma <img src="images/figma.webp" alt="Figma"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="projectSection" class="py-5">
+    <div id="projectHeadings">
+      <h1>Projects</h1>
+      <h1>Projects</h1>
+    </div>
+    <div class="swiper" id="ProjectSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="images/project_images/denik.png" alt="Project images" />
+          <div class="project-info">
+            <h5>Denik Electronics</h5>
+            <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+              <div class="tag bg-dark">JavaScript</div>
+              <div class="tag bg-dark">PHP</div>
+              <div class="tag bg-dark">MySQL</div>
+              <div class="tag bg-dark">Ajax</div>
+              <div class="tag bg-dark">Figma</div>
+            </div>
+            <p>This is a business website for an automation company. Its
+              admin panel has the facility to track the number of visitors
+              and their time.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="images/project_images/stocx.png" alt="Project images" />
+          <div class="project-info">
+            <h5>Stock images</h5>
+            <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+              <div class="tag bg-dark">JavaScript</div>
+              <div class="tag bg-dark">Bootstrap</div>
+              <div class="tag bg-dark">API</div>
+              <div class="tag bg-dark">Figma</div>
+            </div>
+            <p>This is a search engine for free stock images developed using
+              Unsplash's API. This site provides stock images and allows you
+              to search for specific stock images. </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="images/project_images/gamester.png" alt="Project images" />
+          <div class="project-info">
+            <h5>Gamesters</h5>
+            <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+              <div class="tag bg-dark">JavaScript</div>
+              <div class="tag bg-dark">PHP</div>
+              <div class="tag bg-dark">Bootstrap</div>
+              <div class="tag bg-dark">MySQL</div>
+              <div class="tag bg-dark">Ajax</div>
+            </div>
+            <p>This is a Freefire Tournament website with an admin panel to
+              control all tournaments. It has an integrated payment gateway.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="d-flex justify-content-evenly" style="height: 56%;">
+            <img class="phone_img" src="images/project_images/swn-1.gif" alt="Project images" />
+            <img class="phone_img" src="images/project_images/swn-2.webp" alt="Project images" />
+          </div>
+          <div class="project-info">
+            <h5>Religious Program PWA</h5>
+            <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+              <div class="tag bg-dark">JavaScript</div>
+              <div class="tag bg-dark">SCSS</div>
+              <div class="tag bg-dark">PHP</div>
+              <div class="tag bg-dark">JQuery</div>
+              <div class="tag bg-dark">Ajax</div>
+              <div class="tag bg-dark">MySQL</div>
+              <div class="tag bg-dark">Figma</div>
+            </div>
+            <p>A custom religion programme-handling web-app designed
+              for the specific use of a client to handle programmes.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="align-items-center d-flex gap-3 justify-content-evenly" style="height: 50%;">
+            <img src="images/project_images/ModernMusic_d.png" style="height: 100%;" alt="Project images" />
+            <img class="phone_img" style="height: 90%;" src="images/project_images/ModernMusic_m.gif" alt="Project images" />
+          </div>
+          <div class="project-info">
+            <h5 class="text-nowrap">Modern Music & Stage Lighting</h5>
+            <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+              <div class="tag bg-dark">JavaScript</div>
+              <div class="tag bg-dark">PHP</div>
+              <div class="tag bg-dark">SCSS</div>
+              <div class="tag bg-dark">Bootstrap</div>
+              <div class="tag bg-dark">JQuery</div>
+              <div class="tag bg-dark">Ajax</div>
+            </div>
+            <p>A custom business website for a local business
+              "<a href="#" target="_blank" rel="nofollow" class="text-decoration-underline text-light">Modern Music &
+                Stage Lighting</a>"
+              using
+              minimalist animations in
+              JS.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="images/project_images/expansers.png" alt="Project images" />
+          <div class="project-info">
+            <h5>Expansers Technology</h5>
+            <div class="tags d-flex flex-wrap" style="gap: 0.4rem;">
+              <div class="tag bg-dark">JavaScript</div>
+              <div class="tag bg-dark">Php</div>
+              <div class="tag bg-dark">JQuery</div>
+              <div class="tag bg-dark">Ajax</div>
+              <div class="tag bg-dark">Figma</div>
+            </div>
+            <p>A commercial website developed for the IT firm
+              "<a href="https://expansers.com" target="_blank" rel="nofollow" class="text-decoration-underline text-light">Expansers
+                Technology</a>",
+              of which I was a co-founder.</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <div id="forScroll_wrapper">
+    <div id="footer">
+      <div id="footer_content" class="w-100 h-100">
+        <div class="footer_overlayer">
+          <div id="footerCursor"></div>
+        </div>
+        <p>> Skilled in developing modern and complex website</p>
+        <a href="Harshang's resume.pdf" target="_blank" id="download_btn">Download
+          CV</a>
+        <div id="footerLinks">
+          <a href="https://linkedin.com/in/harshang-thakar" class="d-flex align-items-center"><img src="images/linkedin.svg" alt="Linkedin | Harshang Thakar"><span>@Harshang
+              Thakar</span></a>
+          <a href="https://github.com/proHarshang" class="d-flex align-items-center"><img src="images/github.svg" alt="Github | Harshang Thakar"><span>@ProHarshang</span></a>
+          <a href="mailto:harshang.developer@gmail.com" class="d-flex align-items-center"><img src="images/email.svg" alt="Email | Harshang Thakar"><span>harshang.developer@gmail.com</span></a>
+        </div>
+        <div id="location_bar">
+          <div>Thank You</div>
+          <div class="d-flex align-items-center gap-2"><img src="images/location_pin.svg" alt="Location"> Rajkot,
+            Gujarat, India</div>
+        </div>
+      </div>
+    </div>
+    <div id="contactSection">
+      <div id="contactAlert">Email not sent !</div>
+      <div id="contact_box">
+        <div id="contactHeading">
+          <h1>Say Hello 👋</h1>
+          <h1>Say Hello 👋</h1>
+        </div>
+        <form action="#" method="post" id="contact_form">
+          <div class="field">
+            <label for="Name">Name</label>
+            <input type="text" title="Name" name="name" id="input_name" autoComplete="off">
+          </div>
+          <div class="field">
+            <label for="Email">E-mail</label>
+            <input type="email" title="E-mail" name="email" id="input_email" autoComplete="off">
+          </div>
+          <div class="field">
+            <label for="Subject">Subject</label>
+            <input type="subject" title="Subject" name="subject" id="input_subject" autoComplete="off">
+          </div>
+          <div class="field flex-column align-items-start">
+            <label for="Message">Message</label>
+            <textarea name="subject" title="Message" id="input_message" rows="5" autoComplete="off"></textarea>
+          </div>
+          <button type="submit"><img src="images/plane.svg" alt="send"> <span>Send</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll_extender">
+    <h2>Let's Discuss Work</h2>
+  </div>
+  <!-- footer -->
+
+  <!--====== Javascript scripts =====-->
+  <!-- jquery & ajax  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <!-- gsap  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js" integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

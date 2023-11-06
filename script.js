@@ -142,9 +142,9 @@ const socialString_path = socialString.querySelector("svg path");
 let socialString_width;
 let socialString_height;
 try {
+  socialString_width = socialString.getBoundingClientRect().width;
+  socialString_height = socialString.getBoundingClientRect().height;
   socialString.addEventListener("mousemove", function (dets) {
-    socialString_width = socialString.getBoundingClientRect().width;
-    socialString_height = socialString.getBoundingClientRect().height;
     var path = `M ${socialString_width / 2} 0 Q ${dets.offsetX} ${socialString_height / 2} ${dets.offsetX} ${socialString_height}`;
     gsap.to(socialString_path, {
       attr: { d: path },
@@ -240,17 +240,19 @@ HeadingAnim(contact_frontText, contact_backText)
 
 
 
-// animation : move herosection name up
-gsap.from("#name_up", {
-  y: '600%',
-  duration: 1.4,
-  ease: "power4.out",
-});
-gsap.from("#name_down", {
-  y: '500%',
-  duration: .8,
-  ease: "power4.out",
-})
+// // animation : move herosection name up
+// gsap.from("#name_up", {
+//   y: '-600%',
+//   duration: 1.4,
+//   // ease: "power4.out",
+// });
+// gsap.from("#name_down", {
+//   y: '-200%',
+//   delay: 0.3,
+//   duration: .5,
+//   opacity: 0,
+// ease: "power4.out",
+// })
 
 // img_move_on_mouse  
 function img_move_on_mouse(elem, img) {
@@ -433,7 +435,7 @@ try {
         sending = true;
         contact_form_button.innerHTML = '<img src="images/time.svg" alt="sending"> <span>Sending</span>';
         $.ajax({
-          url: "https://dj.expansers.com/mail.php",
+          url: "mail.php",
           type: "post",
           data: {
             name: input_name.value,

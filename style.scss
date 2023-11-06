@@ -53,18 +53,45 @@ img {
 #preloader {
   display: flex;
   height: 100vh;
-  background: var(--light);
+  background: white;
   align-items: center;
   justify-content: center;
-  z-index: 5000;
+  z-index: 500000;
+  font-family: a;
   position: fixed;
   overflow-y: hidden;
-  span {
-    font-size: 5rem;
-    background: linear-gradient(89.99deg, #243afa -2.26%, #ff4308 102.14%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+
+  .tracking-in-expand {
+    -webkit-animation: tracking-in-expand 1.2s
+      cubic-bezier(0.215, 0.61, 0.355, 1) infinite alternate both;
+    animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.61, 0.355, 1)
+      infinite alternate both;
+  }
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -122,6 +149,7 @@ img {
         width: 100vw;
         text-align: center;
         display: block;
+        user-select: none;
       }
       #name_up {
         color: transparent;
@@ -143,7 +171,7 @@ img {
       cursor: url(images/ITSME.svg), auto;
       left: 50%;
       translate: -50%;
-      transform-origin: center;
+      transform-origin: bottom;
       transition: transform 0.5s;
       will-change: auto;
     }
@@ -173,11 +201,27 @@ img {
         transform: translateY(0%);
       }
     }
-    #heroSocialIcons a img {
-      filter: invert(1);
-      height: 1.6rem;
-      &:active {
-        scale: 0.8;
+    #heroSocialIcons {
+      position: absolute;
+      height: 100%;
+      width: max-content;
+      left: 100%;
+      transform: translateX(-150%);
+      background-color: black;
+      top: 0%;
+      z-index: 2;
+      .line {
+        position: absolute;
+        height: 100%;
+        z-index: -1;
+        width: fit-content;
+      }
+      a img {
+        filter: invert(1);
+        height: 1.6rem;
+        &:active {
+          scale: 0.8;
+        }
       }
     }
   }
@@ -233,6 +277,7 @@ img {
 
   .custom-shape-divider-bottom {
     position: absolute;
+    display: none;
     bottom: 0;
     left: 0;
     width: 100%;
