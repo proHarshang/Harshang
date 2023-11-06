@@ -434,7 +434,7 @@ try {
         sending = true;
         contact_form_button.innerHTML = '<img src="images/time.svg" alt="sending"> <span>Sending</span>';
         $.ajax({
-          url: "mail.php",
+          url: "https://dj.expansers.com/mail.php",
           type: "post",
           data: {
             name: input_name.value,
