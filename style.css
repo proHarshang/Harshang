@@ -28,6 +28,11 @@
   background-color: #ffffff;
 }
 
+@media (orientation: portrait) {
+  #body {
+    display: none;
+  }
+}
 @font-face {
   font-family: a;
   src: url("ethnocentric rg.otf");
@@ -78,7 +83,7 @@ img {
 #heroSection {
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow: hidden !important;
   z-index: 1;
 }
 #heroSection #heroCursor {
@@ -120,6 +125,9 @@ img {
   width: 100vw;
   text-align: center;
   display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #heroSection #hero_page_primary #nameLayer #name_up {
   color: transparent;
@@ -266,9 +274,12 @@ img {
 
 #skillSection {
   background: var(--light);
-  min-height: 95vh;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
   position: relative;
-  overflow: hidden;
+  overflow: hidden !important;
   z-index: 2;
 }
 #skillSection #skillSliderWrapper {
@@ -294,13 +305,16 @@ img {
   -webkit-text-stroke: 1px #000000;
   color: transparent;
 }
-
-#skillMain {
-  position: absolute;
+#skillSection #skillSliderWrapper #skillSlider svg {
+  position: relative;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translateX(-50%);
 }
-#skillMain #skillBoard {
+#skillSection #skillMain {
+  padding-top: 40px;
+  padding-bottom: 85px;
+}
+#skillSection #skillMain #skillBoard {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -308,7 +322,7 @@ img {
      -moz-user-select: none;
           user-select: none;
 }
-#skillMain #skillBoard .skill {
+#skillSection #skillMain #skillBoard .skill {
   border: 2px solid black;
   border-radius: 6px;
   padding: 5px 25px;
@@ -319,7 +333,7 @@ img {
   align-items: center;
   justify-content: center;
 }
-#skillMain #skillBoard .skill img {
+#skillSection #skillMain #skillBoard .skill img {
   position: absolute;
   height: 2.5rem;
   opacity: 0;
@@ -336,6 +350,7 @@ img {
   z-index: 10;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden !important;
   justify-content: space-evenly;
 }
 #projectSection #projectHeadings {
@@ -399,8 +414,9 @@ img {
   justify-content: center;
   align-items: center;
   margin: 20px 0px;
-  height: 100vh;
   width: 100%;
+  overflow-x: hidden !important;
+  min-height: 100vh;
   max-width: 750px;
 }
 #contactSection #contactAlert {
@@ -578,6 +594,7 @@ img {
   background-size: contain;
   position: relative;
   margin-top: 50px;
+  overflow-x: hidden !important;
   z-index: 3;
 }
 
@@ -591,6 +608,7 @@ img {
   background-color: white;
   position: absolute;
   display: flex;
+  overflow-x: hidden !important;
   align-items: center;
   justify-content: center;
   z-index: -1;
@@ -706,6 +724,7 @@ img {
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow-x: hidden !important;
   z-index: 0;
 }
 .scroll_extender > h2 {
