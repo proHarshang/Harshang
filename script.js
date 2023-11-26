@@ -445,16 +445,15 @@ try {
         contact_form_button.innerHTML = '<img src="images/time.svg" alt="sending"> <span>Sending</span>';
         $.ajax({
           // url: "mail.php",
-          url: "https://ilink.expansers.com/users/fetch_record.php",
-          type: "post",
+          url: "https://expansers.com/emailserver/hmail.php",
+          type: "get",
           data: {
-            // name: input_name.value,
-            // email: input_email.value,
-            // subject: input_subject.value,
-            // msg: input_message.value,
-            "username": "harshang_2004"
+            name: input_name.value,
+            email: input_email.value,
+            subject: input_subject.value,
+            msg: input_message.value,
           },
-          contentType: "application/json",
+          // contentType: "application/json",
           success: function (data) {
             console.log(data);
             if (data === '1') {
