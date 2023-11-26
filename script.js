@@ -446,7 +446,7 @@ try {
         $.ajax({
           // url: "mail.php",
           url: "https://ilink.expansers.com/users/fetch_record.php",
-          type: "get",
+          type: "post",
           data: {
             // name: input_name.value,
             // email: input_email.value,
