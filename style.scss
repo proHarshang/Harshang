@@ -644,6 +644,7 @@ img {
   clip-path: circle(8%);
   #footer_content {
     filter: blur(10px);
+    overflow: hidden;
     position: relative;
     transition: filter 1s;
     display: flex;

@@ -114,6 +114,7 @@ if (preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
         <div class="d-flex">
           <div class="skill">HTML <img src="images/html.webp" alt="HTML"></div>
           <div class="skill">CSS <img src="images/css.webp" alt="CSS"></div>
+          <div class="skill">React JS <img src="images/reactJS.webp" alt="ReactJS"></div>
         </div>
         <div class="d-flex">
           <div class="skill">JavaScript <img src="images/js.webp" alt="JavaScript"></div>

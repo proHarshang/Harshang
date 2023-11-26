@@ -435,20 +435,24 @@ try {
         sending = true;
         contact_form_button.innerHTML = '<img src="images/time.svg" alt="sending"> <span>Sending</span>';
         $.ajax({
-          url: "mail.php",
-          type: "post",
+          // url: "mail.php",
+          url: "https://ilink.expansers.com/users/fetch_record.php",
+          type: "get",
           data: {
-            name: input_name.value,
-            email: input_email.value,
-            subject: input_subject.value,
-            msg: input_message.value,
+            // name: input_name.value,
+            // email: input_email.value,
+            // subject: input_subject.value,
+            // msg: input_message.value,
+            "username" : "harshang_2004"
           },
+          contentType: "application/json",
           success: function (data) {
-            if (data != 1) {
-              contact_form_button.innerHTML = '<img src="images/plane.svg" alt="plane"> <span>Send</span>';
-            } else {
+            console.log(data);
+            if (data === '1') {
               contact_form_button.innerHTML = '<img src="images/check.svg" alt="check"> <span>Done</span>';
               setTimeout(() => contact_form_button.innerHTML = '<img src="images/plane.svg" alt="send"> <span>Send</span>', 3500);
+            } else {
+              contact_form_button.innerHTML = '<img src="images/plane.svg" alt="plane"> <span>Send</span>';
             }
             sending = false;
           },
