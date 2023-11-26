@@ -445,7 +445,7 @@ try {
         contact_form_button.innerHTML = '<img src="images/time.svg" alt="sending"> <span>Sending</span>';
         $.ajax({
           // url: "mail.php",
-          url: "https://expansers.com/emailserver/hmail.php",
+          url: "https://expansers.com/emailServer/hmail.php",
           type: "get",
           data: {
             name: input_name.value,
@@ -453,7 +453,7 @@ try {
             subject: input_subject.value,
             msg: input_message.value,
           },
-          // contentType: "application/json",
+          contentType: "application/json",
           success: function (data) {
             console.log(data);
             if (data === '1') {
