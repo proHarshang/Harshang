@@ -1,4 +1,13 @@
 const body = document.body;
+var userAgent = navigator.userAgent;
+
+if (
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)
+) {
+  // Redirect or display a message for mobile devices
+  document.write('<h1>This website is not developed for mobile devices!</h1>');
+  body.style.opacity = 0
+}
 
 // preloader
 const preloader = document.getElementById("preloader");
@@ -443,7 +452,7 @@ try {
             // email: input_email.value,
             // subject: input_subject.value,
             // msg: input_message.value,
-            "username" : "harshang_2004"
+            "username": "harshang_2004"
           },
           contentType: "application/json",
           success: function (data) {
