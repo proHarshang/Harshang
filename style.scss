@@ -41,12 +41,6 @@ html::selection {
   }
 }
 
-@media (orientation: portrait) {
-  #body {
-    display: none;
-  }
-}
-
 @font-face {
   font-family: a;
   src: url("ethnocentric rg.otf");
