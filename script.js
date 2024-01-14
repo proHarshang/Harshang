@@ -5,8 +5,7 @@ if (
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)
 ) {
   // Redirect or display a message for mobile devices
-  document.write('<h1>This website is not developed for mobile devices!</h1>');
-  body.style.opacity = 0
+  document.write('<h1 style="position: fixed; top: 0; width: 100vw; height: 100vh; background-color: white; z-index: 5000; padding: 30px; box-shadow: 0px 0px 0px 1000px white;">This website is not developed for mobile devices!</h1>');
 }
 
 // preloader
